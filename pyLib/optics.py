@@ -12,7 +12,65 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def closest_stable_unstable(myLine, num_turns=1000, d_gen=0.0, xBoundary=3.5e-2, xSearch=[0, 1], absPrecisio=1e-6):
+
+
+def plot_beta_dx(myLine, plot_x=False):
+    """
+    This function calculates and plots the beta functions (horizontal and vertical)
+    with the positions of the quadrupoles marked, the dispersion function 
+    and optionally the transverse x-coordinate as a function of the position 
+    along the beamline. 
+
+    Args:
+        myLine (object): An object representing the beamline.
+        plot_x (bool, optional): If `True`, the transverse x-coordinate will be plotted 
+                                  in addition to the other parameters.
+                                  (default is `False`).
+
+    Returns:
+        None: The function creates a plot with three subplots: 
+              - Beta functions (horizontal and vertical)
+              - Dispersion function
+              - Transverse x-coordinate (optional)
+    """
+    tw = myLine.twiss(method='4d')
+    
+    # Get a table with all the Quadrupoles
+    tt = myLine.get_table()
+    ttquad = tt.rows[tt.element_type=='Quadrupole']
+    
+    plt.figure(figsize=(10,9))
+    plt.subplots_adjust(hspace=0.5)
+    
+    # Plot the beta functions
+    ax1 = plt.subplot(3,1,1)
+    plt.plot(tw.s, tw.betx, '-', label='x')
+    plt.plot(tw.s, tw.bety, '-', label='y')
+    plt.ylabel(r'$\beta_{x,y}$ [m]')
+    plt.legend(fontsize='small')
+    
+    # Vertical line in every Quadrupole's position
+    for n in ttquad.name:
+        plt.axvspan(ttquad['s', n], ttquad['s', n] + myLine[n].length, color='k', alpha=0.1, linewidth=0)
+        
+    # Plot the dispersion function
+    plt.subplot(3, 1, 2, sharex=ax1)
+    plt.plot(tw.s, tw.dx, '-', alpha=0.7)
+    plt.xlabel('s [m]')
+    plt.ylabel(r'$D_x$ [m]')  
+    
+    if plot_x == True:
+        # Plot the x transverse coordinate
+        plt.subplot(3, 1, 3, sharex=ax1)
+        plt.plot(tw.s, tw.x, '-', alpha=0.7)
+        plt.ylabel('x [m]')
+        plt.xlabel('s [m]')
+        
+    
+    
+    
+
+def closest_stable_unstable(myLine, num_turns=1000, d_gen=0.0, xBoundary=3.5e-2, xSearch=[0, 1], absPrecisio=1e-4):
     """
     Identifies the two closest boundary points separating stable and 
     unstable regions around a given `xBoundary`.
@@ -38,7 +96,7 @@ def closest_stable_unstable(myLine, num_turns=1000, d_gen=0.0, xBoundary=3.5e-2,
         (default is [0, 1]).
         absPrecisio (float, optional): The absolute precision 
         threshold for stopping the search, expressed in meters 
-        (default is 1e-6).
+        (default is 1e-4).
 
     Returns:
         list: A list representing the final search region `[x_min, x_max]` 
@@ -411,7 +469,27 @@ def plot_phase_space(rec_part, nc_part, rec_sep, nc_sep, poly_sep, sorted_tr, fi
     
     
     
+def stable_area(fixed_p):
+    """
+    Calculate the stable area based on the given input points.
+
+    This function computes the stable area using a determinant-based formula,
+    which is derived from the normalized coordinates of points. 
+    The determinant is calculated from the provided x_norm_fp and px_norm_fp 
+    values in the input dictionary, with an additional [1, 1, 1] vector 
+    to complete the determinant matrix.
+
+    Args:
+        fixed_p (dict): A dictionary containing the following keys:
+        - 'x_norm_fp' (array-like): The normalized x-coordinates of the fixed points.
+        - 'px_norm_fp' (array-like): The normalized px-coordinates of the fixed points.
+
+    Returns:
+        float: The calculated stable area based on the input coordinates.
+    """
+    st_area = 0.5*np.linalg.det([fixed_p['x_norm_fp'], fixed_p['px_norm_fp'], [1, 1, 1]])
     
+    return st_area
     
     
     
