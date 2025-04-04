@@ -10,6 +10,7 @@ __author__ = 'Angelos Efstratiou and Alessio Mereghetti'
 
 import numpy as np
 import matplotlib.pyplot as plt
+import xtrack as xt
 
 
 
@@ -29,9 +30,9 @@ def plot_beta_dx(myLine, plot_x=False):
 
     Returns:
         None: The function creates a plot with three subplots: 
-              - Beta functions (horizontal and vertical)
-              - Dispersion function
-              - Transverse x-coordinate (optional)
+          - Beta functions (horizontal and vertical)
+          - Dispersion function
+          - Transverse x-coordinate (optional)
     """
     tw = myLine.twiss(method='4d')
     
@@ -70,7 +71,7 @@ def plot_beta_dx(myLine, plot_x=False):
     
     
 
-def closest_stable_unstable(myLine, num_turns=1000, d_gen=0.0, xBoundary=3.5e-2, xSearch=[0, 1], absPrecisio=1e-4):
+def closest_stable_unstable(myLine, num_turns=1000, d_gen=0.0, xBoundary=3.5e-2, xSearch=[0, 1], absPrecisio=1e-6):
     """
     Identifies the two closest boundary points separating stable and 
     unstable regions around a given `xBoundary`.
@@ -96,7 +97,7 @@ def closest_stable_unstable(myLine, num_turns=1000, d_gen=0.0, xBoundary=3.5e-2,
         (default is [0, 1]).
         absPrecisio (float, optional): The absolute precision 
         threshold for stopping the search, expressed in meters 
-        (default is 1e-4).
+        (default is 1e-6).
 
     Returns:
         list: A list representing the final search region `[x_min, x_max]` 
@@ -129,7 +130,7 @@ def closest_stable_unstable(myLine, num_turns=1000, d_gen=0.0, xBoundary=3.5e-2,
     
     
     
-def record_separatrix(myLine, xSearch=[0,1], num_turns=1000, d_gen=0.0):
+def record_separatrix(myLine, xBoundary=3.5e-2, xSearch=[0,1], num_turns=1000, d_gen=0.0):
     """
     Tracks a particle at the outer edge of a narrowed-down search 
     region and returns its physical coordinates after each turn.
@@ -152,6 +153,9 @@ def record_separatrix(myLine, xSearch=[0,1], num_turns=1000, d_gen=0.0):
         object: The recorded separatrix data from the last particle track,
         which contains the particle's physical coordinates at each turn.
     """
+    
+    # Set a rectangular aperture limit
+    xt.LimitRect(max_x=xBoundary)
 
     # We track particles at the outer edge of narrowed-down search region
     p = myLine.build_particles(x=xSearch[1], delta=d_gen)
@@ -191,8 +195,8 @@ def separatrix_at_septum(rec_sep, xBoundary=3.5e-2):
         - 'poly_sep': The array of coefficients of the best-fit straight line.
     """
     
-    x_separ = rec_sep.x[0, :]
-    px_separ = rec_sep.px[0, :]
+    x_separ = rec_sep.x[0]
+    px_separ = rec_sep.px[0]
 
     # Find the turn at which the particle was closer to the septum
     i_septum = np.argmin(np.abs(x_separ - xBoundary))
@@ -490,7 +494,197 @@ def stable_area(fixed_p):
     st_area = 0.5*np.linalg.det([fixed_p['x_norm_fp'], fixed_p['px_norm_fp'], [1, 1, 1]])
     
     return st_area
+
+
+
+
+
+def characterize_phase_space_at_septum(myLine, x_gen, d_gen=0.0, xBoundary=3.5e-2, num_turns=1000, plot=False):
+    """
+    Characterizes the phase space at electrostatic septum
+    including the determination of stable area, fixed points
+    and the slope of the separatrix at the septum. 
+    Optionally plots the results.
+
+    Parameters:
+    ----------
+    myLine: An XSuite line object.
+    x_gen : array-like
+    Initial horizontal positions (x) of the generated particles.
+    d_gen : float, optional
+    Initial momentum deviation of the generated particles. 
+    (default is 0.0)
+    xBoundary : float, optional
+    The horizontal position position of the septum. 
+    (default is 3.5e-2 [m])
+    num_turns : int, optional
+    The number of turns to track the particles. 
+    (default is 1000)
+    plot : bool, optional
+    If True, generates and displays plots of both physical and normalized phase spaces. 
+    (default is False)
+
+    Returns:
+    -------
+    dict
+        A dictionary containing the following results:
+        - 'dpx_dx_at_septum' (float): The slope of the separatrix at the septum.
+        - 'stable_area' (float): The area of the stable area in normalized phase space.
+        - 'x_fp' (ndarray): The x positions of the fixed points in physical space.
+        - 'px_fp' (ndarray): The px momenta of the fixed points in physical space.
+        - 'x_norm_fp' (ndarray): The normalized x positions of the fixed points in normalized phase space.
+        - 'px_norm_fp' (ndarray): The normalized px momenta of the fixed points in normalized phase space.
+    """
+
+    tw = myLine.twiss(method='4d')
+
+    # Set prefered precision for search area according to horizontal tune
+    if tw.qx > 1.6661 and tw.qx < 1.6676:
+        absPrecisio = 1e-3
+    elif tw.qx >= 1.6656 and tw.qx <= 1.6661:
+        absPrecisio = 1e-4
+    else:
+        absPrecisio = 1e-6
+
+    # Localize transition between stable and unstable
+    x_septum = xBoundary
+
+    x_stable = 0
+    x_unstable = 3e-2
+    while x_unstable - x_stable > absPrecisio:
+        x_test = (x_stable + x_unstable) / 2
+        p = myLine.build_particles(x=x_test)
+        myLine.track(p, num_turns=num_turns, turn_by_turn_monitor=True)
+        mon_test = myLine.record_last_track
+        if (mon_test.x > x_septum).any():
+            x_unstable = x_test
+        else:
+            x_stable = x_test
+
+    p = myLine.build_particles(x=[x_stable, x_unstable]) # Build 2 particles at once
+    myLine.track(p, num_turns=num_turns, turn_by_turn_monitor=True)
+    mon_separatrix = myLine.record_last_track
+    nc_sep = tw.get_normalized_coordinates(mon_separatrix)
+
+    z_triang = nc_sep.x_norm[0, :] + 1j * nc_sep.px_norm[0, :]
+    r_triang = np.abs(z_triang)
+ 
+    # Find fixed points
+    i_fp1 = np.argmax(r_triang)
+    z_fp1 = z_triang[i_fp1]
+    r_fp1 = np.abs(z_fp1)
+
+    mask_fp2 = np.abs(z_triang - z_fp1 * np.exp(1j * 2 / 3 * np.pi)) < 0.2 * r_fp1
+    i_fp2 = np.argmax(r_triang * mask_fp2)
+
+    mask_fp3 = np.abs(z_triang - z_fp1 * np.exp(-1j * 2 / 3 * np.pi)) < 0.2 * r_fp1
+    i_fp3 = np.argmax(r_triang * mask_fp3)
+
+    x_norm_fp = np.array([nc_sep.x_norm[0, i_fp1],
+                          nc_sep.x_norm[0, i_fp2],
+                          nc_sep.x_norm[0, i_fp3]])
+    px_norm_fp = np.array([nc_sep.px_norm[0, i_fp1],
+                           nc_sep.px_norm[0, i_fp2],
+                           nc_sep.px_norm[0, i_fp3]])
+
+    x_fp = np.array([mon_separatrix.x[0, i_fp1],
+                     mon_separatrix.x[0, i_fp2],
+                     mon_separatrix.x[0, i_fp3]])
+    px_fp = np.array([mon_separatrix.px[0, i_fp1],
+                      mon_separatrix.px[0, i_fp2],
+                      mon_separatrix.px[0, i_fp3]])
+
+    stable_area = 0.5*np.linalg.det([x_norm_fp, px_norm_fp, [1, 1, 1]])
+
+    # Measure slope of the separatrix at the semptum
+    x_separ = mon_separatrix.x[1, :].copy()
+    px_separ = mon_separatrix.px[1, :].copy()
+    x_norm_separ = nc_sep.x_norm[1, :].copy()
+    px_norm_separ = nc_sep.px_norm[1, :].copy()
+
+    x_separ[px_norm_separ < -1e-2] = 99999999. # Mask away second separatrix
+
+    i_septum = np.argmin(np.abs(x_separ - x_septum))
     
+    # Condition for the case that (i_septum + 3) > num_turns
+    if (i_septum + 3) <= num_turns:
+        poly_sep = np.polyfit([x_separ[i_septum + 3], x_separ[i_septum - 3]],
+                                 [px_separ[i_septum + 3], px_separ[i_septum - 3]],
+                                  deg=1)
+    else:
+        poly_sep = np.polyfit([x_separ[i_septum], x_separ[i_septum - 3]],
+                                 [px_separ[i_septum], px_separ[i_septum - 3]],
+                                  deg=1)
+        
+    dpx_dx_at_septum = poly_sep[0]
+
+    if plot:
+        particles = myLine.build_particles(x=x_gen, px=0)
+        myLine.track(particles, num_turns=num_turns, turn_by_turn_monitor=True)
+        mon = myLine.record_last_track
+        nc = tw.get_normalized_coordinates(mon)
+
+        plt.figure(figsize=(10, 5))
+        ax_geom = plt.subplot(1, 2, 1)
+        plt.plot(mon.x.T, mon.px.T, '.', markersize=1, color='C0')
+        plt.ylabel(r'$p_x$')
+        plt.xlabel(r'$x$ [m]')
+        plt.xlim(-5e-2, 5e-2)
+        plt.ylim(-5e-3, 5e-3)
+        ax_norm = plt.subplot(1, 2, 2)
+        plt.plot(nc.x_norm.T * 1e3, nc.px_norm.T * 1e3,
+                 '.', markersize=1, color='C0')
+        plt.xlim(-15, 15)
+        plt.ylim(-15, 15)
+        plt.gca().set_aspect('equal', adjustable='datalim')
+
+        plt.xlabel(r'$\hat{x}$ [$10^{-3}$]')
+        plt.ylabel(r'$\hat{px}$ [$10^{-3}$]')
+
+        # Plot separatrix
+        x_triang =mon_separatrix.x[0, :]
+        px_triang = mon_separatrix.px[0, :]
+        x_norm_triang = nc_sep.x_norm[0, :]
+        px_norm_triang = nc_sep.px_norm[0, :]
+
+        theta_triang = np.angle(x_norm_triang + 1j * px_norm_triang)
+        idx = np.argsort(theta_triang)
+        x_triang = x_triang[idx]
+        px_triang = px_triang[idx]
+        x_norm_triang = x_norm_triang[idx]
+        px_norm_triang = px_norm_triang[idx]
+
+        mask_alive = mon_separatrix.state[1, :] > 0
+        for ii in range(3):
+            ax_geom.plot(mon_separatrix.x[1, mask_alive][ii::3],
+                         mon_separatrix.px[1, mask_alive][ii::3],
+                         '-', lw=3, color='C1', alpha=0.9)
+        ax_geom.plot(x_triang, px_triang, '-', lw=3, color='C2', alpha=0.9)
+        ax_geom.plot(x_fp, px_fp, '*', markersize=10, color='k')
+
+        for ii in range(3):
+            ax_norm.plot(nc_sep.x_norm[1, mask_alive][ii::3] * 1e3,
+                         nc_sep.px_norm[1, mask_alive][ii::3] * 1e3,
+                         '-', lw=3, color='C1', alpha=0.9)
+        ax_norm.plot(x_norm_triang * 1e3, px_norm_triang * 1e3,
+                     '-', lw=3, color='C2', alpha=0.9)
+        ax_norm.plot(x_norm_fp*1e3, px_norm_fp*1e3, '*', markersize=10, color='k')
+
+        x_plt = [x_septum - 1e-2, x_septum + 1e-2]
+        ax_geom.plot(x_plt, np.polyval(poly_sep, x_plt), '--k', linewidth=3)
+        ax_geom.axvline(x=x_septum, color='k', alpha=0.4, linestyle='--')
+        plt.subplots_adjust(wspace=0.3)
+        ax_geom.set_title('Physical phase space')
+        ax_norm.set_title('Normalized phase space')
+
+    return {
+        'dpx_dx_at_septum': dpx_dx_at_septum,
+        'stable_area': stable_area,
+        'x_fp': x_fp,
+        'px_fp': x_fp,
+        'x_norm_fp': x_norm_fp,
+        'px_norm_fp': x_norm_fp
+    }  
     
     
     
