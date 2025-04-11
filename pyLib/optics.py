@@ -14,61 +14,6 @@ import xtrack as xt
 
 
 
-
-def plot_beta_dx(myLine, plot_x=False):
-    """
-    This function calculates and plots the beta functions (horizontal and vertical)
-    with the positions of the quadrupoles marked, the dispersion function 
-    and optionally the transverse x-coordinate as a function of the position 
-    along the beamline. 
-
-    Args:
-        myLine (object): An object representing the beamline.
-        plot_x (bool, optional): If `True`, the transverse x-coordinate will be plotted 
-                                  in addition to the other parameters.
-                                  (default is `False`).
-
-    Returns:
-        None: The function creates a plot with three subplots: 
-          - Beta functions (horizontal and vertical)
-          - Dispersion function
-          - Transverse x-coordinate (optional)
-    """
-    tw = myLine.twiss(method='4d')
-    
-    # Get a table with all the Quadrupoles
-    tt = myLine.get_table()
-    ttquad = tt.rows[tt.element_type=='Quadrupole']
-    
-    plt.figure(figsize=(10,9))
-    plt.subplots_adjust(hspace=0.5)
-    
-    # Plot the beta functions
-    ax1 = plt.subplot(3,1,1)
-    plt.plot(tw.s, tw.betx, '-', label='x')
-    plt.plot(tw.s, tw.bety, '-', label='y')
-    plt.ylabel(r'$\beta_{x,y}$ [m]')
-    plt.legend(fontsize='small')
-    
-    # Vertical line in every Quadrupole's position
-    for n in ttquad.name:
-        plt.axvspan(ttquad['s', n], ttquad['s', n] + myLine[n].length, color='k', alpha=0.1, linewidth=0)
-        
-    # Plot the dispersion function
-    plt.subplot(3, 1, 2, sharex=ax1)
-    plt.plot(tw.s, tw.dx, '-', alpha=0.7)
-    plt.xlabel('s [m]')
-    plt.ylabel(r'$D_x$ [m]')  
-    
-    if plot_x == True:
-        # Plot the x transverse coordinate
-        plt.subplot(3, 1, 3, sharex=ax1)
-        plt.plot(tw.s, tw.x, '-', alpha=0.7)
-        plt.ylabel('x [m]')
-        plt.xlabel('s [m]')
-        
-    
-    
     
 
 def closest_stable_unstable(myLine, num_turns=1000, d_gen=0.0, xBoundary=3.5e-2, xSearch=[0, 1], absPrecisio=1e-6):
@@ -103,6 +48,15 @@ def closest_stable_unstable(myLine, num_turns=1000, d_gen=0.0, xBoundary=3.5e-2,
         list: A list representing the final search region `[x_min, x_max]` 
         that contains the boundary between stable and unstable regions.
     """
+    tw = myLine.twiss(method='4d')
+
+    # Set prefered precision for search area according to horizontal tune
+    if tw.qx > 1.6661 and tw.qx < 1.6676:
+        absPrecisio = 1e-3
+    elif tw.qx >= 1.6656 and tw.qx <= 1.6661:
+        absPrecisio = 1e-4
+    else:
+        absPrecisio = 1e-6
 
     while xSearch[1] - xSearch[0] > absPrecisio:
         
@@ -153,9 +107,6 @@ def record_separatrix(myLine, xBoundary=3.5e-2, xSearch=[0,1], num_turns=1000, d
         object: The recorded separatrix data from the last particle track,
         which contains the particle's physical coordinates at each turn.
     """
-    
-    # Set a rectangular aperture limit
-    xt.LimitRect(max_x=xBoundary)
 
     # We track particles at the outer edge of narrowed-down search region
     p = myLine.build_particles(x=xSearch[1], delta=d_gen)
@@ -169,7 +120,7 @@ def record_separatrix(myLine, xBoundary=3.5e-2, xSearch=[0,1], num_turns=1000, d
 
 
 
-def separatrix_at_septum(rec_sep, xBoundary=3.5e-2):
+def separatrix_at_septum(rec_sep, xBoundary=3.5e-2, num_turns=1000):
     """
     Analyzes the separatrix at the septum by finding the turn where 
     the particle was closest to the septum, performing a polynomial fit 
@@ -186,6 +137,8 @@ def separatrix_at_septum(rec_sep, xBoundary=3.5e-2):
         rec_sep: turn-by-turn data at the separatrix.
         xBoundary (float, optional): The position of the septum, 
         defined in meters (default is 3.5e-2).
+        num_turns (int, optional): The number of turns (iterations) 
+        to track the particle (default is 1000).
 
     Returns:
         dict: A dictionary called 'separatrix_results' containing:
@@ -201,9 +154,16 @@ def separatrix_at_septum(rec_sep, xBoundary=3.5e-2):
     # Find the turn at which the particle was closer to the septum
     i_septum = np.argmin(np.abs(x_separ - xBoundary))
     
-    # Fit a straight line using the previous and the following passage
-    poly_sep = np.polyfit([x_separ[i_septum + 3], x_separ[i_septum - 3]],
-                          [px_separ[i_septum + 3], px_separ[i_septum - 3]], deg=1)
+    # Condition for the case that (i_septum + 3) > num_turns.
+    # Fit a straight line using the previous and the following passage.
+    if (i_septum + 3) <= num_turns:
+        poly_sep = np.polyfit([x_separ[i_septum + 3], x_separ[i_septum - 3]],
+                                 [px_separ[i_septum + 3], px_separ[i_septum - 3]],
+                                  deg=1)
+    else:
+        poly_sep = np.polyfit([x_separ[i_septum], x_separ[i_septum - 3]],
+                                 [px_separ[i_septum], px_separ[i_septum - 3]],
+                                  deg=1)
     
     # Calculate the slope (derivative) of the polynomial
     slope = poly_sep[0]
@@ -499,7 +459,7 @@ def stable_area(fixed_p):
 
 
 
-def characterize_phase_space_at_septum(myLine, x_gen, d_gen=0.0, xBoundary=3.5e-2, num_turns=1000, plot=False):
+def characterize_phase_space_at_septum(myLine, x_gen, d_gen=0.0, xBoundary=3.5e-2, xSearch=[0, 3e-2], num_turns=1000, plot=False):
     """
     Characterizes the phase space at electrostatic septum
     including the determination of stable area, fixed points
@@ -517,6 +477,9 @@ def characterize_phase_space_at_septum(myLine, x_gen, d_gen=0.0, xBoundary=3.5e-
     xBoundary : float, optional
     The horizontal position position of the septum. 
     (default is 3.5e-2 [m])
+    xSearch (list, optional): The search interval for the boundary 
+    on the horizontal axis, expressed as [x_min, x_max] 
+    (default is [0, 3e-2]).
     num_turns : int, optional
     The number of turns to track the particles. 
     (default is 1000)
@@ -549,19 +512,24 @@ def characterize_phase_space_at_septum(myLine, x_gen, d_gen=0.0, xBoundary=3.5e-
     # Localize transition between stable and unstable
     x_septum = xBoundary
 
+    # Define search region
     x_stable = 0
     x_unstable = 3e-2
+    
+    
     while x_unstable - x_stable > absPrecisio:
+    
         x_test = (x_stable + x_unstable) / 2
-        p = myLine.build_particles(x=x_test)
+        p = myLine.build_particles(x=x_test, delta=d_gen)
         myLine.track(p, num_turns=num_turns, turn_by_turn_monitor=True)
         mon_test = myLine.record_last_track
+        
         if (mon_test.x > x_septum).any():
             x_unstable = x_test
         else:
             x_stable = x_test
 
-    p = myLine.build_particles(x=[x_stable, x_unstable]) # Build 2 particles at once
+    p = myLine.build_particles(x=[x_stable, x_unstable], delta=d_gen) # Build 2 particles at once
     myLine.track(p, num_turns=num_turns, turn_by_turn_monitor=True)
     mon_separatrix = myLine.record_last_track
     nc_sep = tw.get_normalized_coordinates(mon_separatrix)
@@ -593,7 +561,8 @@ def characterize_phase_space_at_septum(myLine, x_gen, d_gen=0.0, xBoundary=3.5e-
     px_fp = np.array([mon_separatrix.px[0, i_fp1],
                       mon_separatrix.px[0, i_fp2],
                       mon_separatrix.px[0, i_fp3]])
-
+                      
+    # Calculate stable area according to fixed points
     stable_area = 0.5*np.linalg.det([x_norm_fp, px_norm_fp, [1, 1, 1]])
 
     # Measure slope of the separatrix at the semptum
@@ -617,12 +586,21 @@ def characterize_phase_space_at_septum(myLine, x_gen, d_gen=0.0, xBoundary=3.5e-
                                   deg=1)
         
     dpx_dx_at_septum = poly_sep[0]
+    
+    # Find px where the least square straight line crosses the electrostatic septum
+    px_at_septum = np.polyval(poly_sep, x_septum)
+    
 
     if plot:
-        particles = myLine.build_particles(x=x_gen, px=0)
+    
+        # NOTE 1: Only if plot is True, we track all the particles (in order to visualize them).
+        
+        particles = myLine.build_particles(x=x_gen, px=0, delta=d_gen)
         myLine.track(particles, num_turns=num_turns, turn_by_turn_monitor=True)
         mon = myLine.record_last_track
         nc = tw.get_normalized_coordinates(mon)
+        
+        # Plot the particles turn-by-turn
 
         plt.figure(figsize=(10, 5))
         ax_geom = plt.subplot(1, 2, 1)
@@ -641,7 +619,9 @@ def characterize_phase_space_at_septum(myLine, x_gen, d_gen=0.0, xBoundary=3.5e-
         plt.xlabel(r'$\hat{x}$ [$10^{-3}$]')
         plt.ylabel(r'$\hat{px}$ [$10^{-3}$]')
 
-        # Plot separatrix
+        # NOTE 2: Only if plot is True, we save and sort the coordinates of the particle
+        # moving on the edge of the stable triangle (in order to visualize it).
+        
         x_triang =mon_separatrix.x[0, :]
         px_triang = mon_separatrix.px[0, :]
         x_norm_triang = nc_sep.x_norm[0, :]
@@ -655,6 +635,9 @@ def characterize_phase_space_at_septum(myLine, x_gen, d_gen=0.0, xBoundary=3.5e-
         px_norm_triang = px_norm_triang[idx]
 
         mask_alive = mon_separatrix.state[1, :] > 0
+        
+        # Plot separatrices and stable triangle
+        
         for ii in range(3):
             ax_geom.plot(mon_separatrix.x[1, mask_alive][ii::3],
                          mon_separatrix.px[1, mask_alive][ii::3],
@@ -669,6 +652,8 @@ def characterize_phase_space_at_septum(myLine, x_gen, d_gen=0.0, xBoundary=3.5e-
         ax_norm.plot(x_norm_triang * 1e3, px_norm_triang * 1e3,
                      '-', lw=3, color='C2', alpha=0.9)
         ax_norm.plot(x_norm_fp*1e3, px_norm_fp*1e3, '*', markersize=10, color='k')
+        
+        # Plot fitted line on the separatrix crossing the septum
 
         x_plt = [x_septum - 1e-2, x_septum + 1e-2]
         ax_geom.plot(x_plt, np.polyval(poly_sep, x_plt), '--k', linewidth=3)
@@ -676,9 +661,11 @@ def characterize_phase_space_at_septum(myLine, x_gen, d_gen=0.0, xBoundary=3.5e-
         plt.subplots_adjust(wspace=0.3)
         ax_geom.set_title('Physical phase space')
         ax_norm.set_title('Normalized phase space')
+        
 
     return {
         'dpx_dx_at_septum': dpx_dx_at_septum,
+        'px_at_septum': px_at_septum,
         'stable_area': stable_area,
         'x_fp': x_fp,
         'px_fp': x_fp,
