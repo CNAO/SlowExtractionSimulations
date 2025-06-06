@@ -16,7 +16,7 @@ import xtrack as xt
 
     
 
-def closest_stable_unstable(myLine, num_turns=1000, d_gen=0.0, xBoundary=3.5e-2, xSearch=[0, 1], absPrecisio=1e-6):
+def closest_stable_unstable(myLine, num_turns=1000, px_gen=0.0, d_gen=0.0, xBoundary=3.5e-2, xSearch=[0, 3e-2], absPrecisio=1e-6):
     """
     Identifies the two closest boundary points separating stable and 
     unstable regions around a given `xBoundary`.
@@ -32,6 +32,7 @@ def closest_stable_unstable(myLine, num_turns=1000, d_gen=0.0, xBoundary=3.5e-2,
         myLine: An XSuite line object.
         num_turns (int, optional): The number of turns (iterations) 
         to track the particle (default is 1000).
+        px_gen (float, optional): The initial horizontal momentum (default is 0.0).
         d_gen (float, optional): The initial momentum deviation for 
         the particle (default is 0.0).
         xBoundary (float, optional): The boundary point in the 
@@ -50,19 +51,19 @@ def closest_stable_unstable(myLine, num_turns=1000, d_gen=0.0, xBoundary=3.5e-2,
     """
     tw = myLine.twiss(method='4d')
 
-    # Set prefered precision for search area according to horizontal tune
-    if tw.qx > 1.6661 and tw.qx < 1.6676:
-        absPrecisio = 1e-3
-    elif tw.qx >= 1.6656 and tw.qx <= 1.6661:
-        absPrecisio = 1e-4
-    else:
-        absPrecisio = 1e-6
-
-    while xSearch[1] - xSearch[0] > absPrecisio:
+    # Set greater number of turns for horizontal tune close to 5/3
+    if tw.qx >= 1.6656 and tw.qx < 1.6676:
+        num_turns = 1e4
+    
+    # Define search region (when d_gen =~ 0 we apply the tw.dx[0] * d_gen displacement) 
+    x_stable = xSearch[0] + tw.dx[0] * d_gen
+    x_unstable = xSearch[1] + tw.dx[0] * d_gen
+    
+    while x_unstable - x_stable > absPrecisio:
         
         # Generate a particle in the middle of the region
-        x_test = (xSearch[0] + xSearch[1]) / 2
-        p = myLine.build_particles(x=x_test, delta=d_gen)
+        x_test = (x_stable + x_unstable) / 2
+        p = myLine.build_particles(x=x_test, px=px_gen, delta=d_gen)
         
         # Track
         myLine.track(p, num_turns=num_turns, turn_by_turn_monitor=True)
@@ -72,19 +73,22 @@ def closest_stable_unstable(myLine, num_turns=1000, d_gen=0.0, xBoundary=3.5e-2,
         if (rec_test.x > xBoundary).any():
             # Test particle is unstable
             # => Sepearatrix is on the right w.r.t x_test
-            xSearch[1] = x_test
+            x_unstable = x_test
         else:
             # Test particle is stable
             # Sepearatrix is on the left w.r.t x_test
-            xSearch[0] = x_test
-            
+            x_stable = x_test
+    
+    xSearch[0] = x_stable
+    xSearch[1] = x_unstable
+    
     return xSearch
     
     
     
     
     
-def record_separatrix(myLine, xBoundary=3.5e-2, xSearch=[0,1], num_turns=1000, d_gen=0.0):
+def record_separatrix(myLine, xBoundary=3.5e-2, xSearch=[0,3e-2], num_turns=1000, px_gen=0.0, d_gen=0.0):
     """
     Tracks a particle at the outer edge of a narrowed-down search 
     region and returns its physical coordinates after each turn.
@@ -100,6 +104,7 @@ def record_separatrix(myLine, xBoundary=3.5e-2, xSearch=[0,1], num_turns=1000, d
         (default is [0, 1]).
         num_turns (int, optional): The number of turns (iterations) 
         to track the particle (default is 1000).
+        px_gen (float, optional): The initial horizontal momentum (default is 0.0)
         d_gen (float, optional): The initial momentum deviation 
         for the particle (default is 0.0).
 
@@ -109,7 +114,7 @@ def record_separatrix(myLine, xBoundary=3.5e-2, xSearch=[0,1], num_turns=1000, d
     """
 
     # We track particles at the outer edge of narrowed-down search region
-    p = myLine.build_particles(x=xSearch[1], delta=d_gen)
+    p = myLine.build_particles(x=xSearch[1], px=px_gen, delta=d_gen)
     myLine.track(p, num_turns=num_turns, turn_by_turn_monitor=True)
 
     rec_sep = myLine.record_last_track
@@ -185,7 +190,7 @@ def separatrix_at_septum(rec_sep, xBoundary=3.5e-2, num_turns=1000):
 
 
     
-def find_boundary_stable(myLine, xSearch, num_turns=1000, d_gen=0.0):
+def find_boundary_stable(myLine, xSearch, num_turns=1000, px_gen=0.0, d_gen=0.0):
     """"
     Tracks a particle at the inner edge of a specified search region 
     and returns the turn-by-turn physical coordinates of the particle 
@@ -204,6 +209,7 @@ def find_boundary_stable(myLine, xSearch, num_turns=1000, d_gen=0.0):
         The particle is tracked starting at `xSearch[0]`.
         num_turns (int, optional): The number of turns to track the particle. 
         (default is 1000).
+        px_gen (float, optional): The initial horizontal momentum (default is 0.0)
         d_gen (float, optional): The initial momentum deviation 
         for the particle (default is 0.0).
 
@@ -212,7 +218,7 @@ def find_boundary_stable(myLine, xSearch, num_turns=1000, d_gen=0.0):
         of the particle as it evolves over the specified number of turns.
     """
     # We track particles at the inner edge of narrowed-down search region 
-    p = myLine.build_particles(x=xSearch[0], delta=d_gen)
+    p = myLine.build_particles(x=xSearch[0], px=px_gen, delta=d_gen)
     myLine.track(p, num_turns=num_turns, turn_by_turn_monitor=True)
     
     triangle = myLine.record_last_track
@@ -459,7 +465,7 @@ def stable_area(fixed_p):
 
 
 
-def characterize_phase_space_at_septum(myLine, x_gen, d_gen=0.0, xBoundary=3.5e-2, xSearch=[0, 3e-2], num_turns=1000, plot=False):
+def characterize_phase_space_at_septum(myLine, x_gen, px_gen=0.0, d_gen=0.0, xBoundary=3.5e-2, xSearch=[0, 3e-2], num_turns=1000, plot=False):
     """
     Characterizes the phase space at electrostatic septum
     including the determination of stable area, fixed points
@@ -471,6 +477,9 @@ def characterize_phase_space_at_septum(myLine, x_gen, d_gen=0.0, xBoundary=3.5e-
     myLine: An XSuite line object.
     x_gen : array-like
     Initial horizontal positions (x) of the generated particles.
+    px_gen : array-like
+    Initial horizontal momentums (px) of the generated particles.
+    (default is 0.0)
     d_gen : float, optional
     Initial momentum deviation of the generated particles. 
     (default is 0.0)
@@ -501,26 +510,22 @@ def characterize_phase_space_at_septum(myLine, x_gen, d_gen=0.0, xBoundary=3.5e-
 
     tw = myLine.twiss(method='4d')
 
-    # Set prefered precision for search area according to horizontal tune
-    if tw.qx > 1.6661 and tw.qx < 1.6676:
-        absPrecisio = 1e-3
-    elif tw.qx >= 1.6656 and tw.qx <= 1.6661:
-        absPrecisio = 1e-4
-    else:
-        absPrecisio = 1e-6
+    # Set greater number of turns for horizontal tune close to 5/3
+    if tw.qx >= 1.6656 and tw.qx < 1.6676:
+        num_turns = 1e4
 
     # Localize transition between stable and unstable
     x_septum = xBoundary
 
-    # Define search region
-    x_stable = 0
-    x_unstable = 3e-2
+    # Define search region (when d_gen =~ 0 we apply the tw.dx[0] * d_gen displacement) 
+    x_stable = xSearch[0] + tw.dx[0] * d_gen
+    x_unstable = xSearch[1] + tw.dx[0] * d_gen
     
     
-    while x_unstable - x_stable > absPrecisio:
+    while x_unstable - x_stable > 1e-6:
     
         x_test = (x_stable + x_unstable) / 2
-        p = myLine.build_particles(x=x_test, delta=d_gen)
+        p = myLine.build_particles(x=x_test, px=px_gen, delta=d_gen)
         myLine.track(p, num_turns=num_turns, turn_by_turn_monitor=True)
         mon_test = myLine.record_last_track
         
@@ -529,7 +534,7 @@ def characterize_phase_space_at_septum(myLine, x_gen, d_gen=0.0, xBoundary=3.5e-
         else:
             x_stable = x_test
 
-    p = myLine.build_particles(x=[x_stable, x_unstable], delta=d_gen) # Build 2 particles at once
+    p = myLine.build_particles(x=[x_stable, x_unstable], px=px_gen, delta=d_gen) # Build 2 particles at once
     myLine.track(p, num_turns=num_turns, turn_by_turn_monitor=True)
     mon_separatrix = myLine.record_last_track
     nc_sep = tw.get_normalized_coordinates(mon_separatrix)
@@ -595,10 +600,10 @@ def characterize_phase_space_at_septum(myLine, x_gen, d_gen=0.0, xBoundary=3.5e-
     
         # NOTE 1: Only if plot is True, we track all the particles (in order to visualize them).
         
-        particles = myLine.build_particles(x=x_gen, px=0, delta=d_gen)
+        particles = myLine.build_particles(x=x_gen, px=px_gen, delta=d_gen)
         myLine.track(particles, num_turns=num_turns, turn_by_turn_monitor=True)
-        mon = myLine.record_last_track
-        nc = tw.get_normalized_coordinates(mon)
+        mon = myLine.record_last_track              
+        nc = tw.get_normalized_coordinates(mon)      
         
         # Plot the particles turn-by-turn
 
@@ -622,7 +627,7 @@ def characterize_phase_space_at_septum(myLine, x_gen, d_gen=0.0, xBoundary=3.5e-
         # NOTE 2: Only if plot is True, we save and sort the coordinates of the particle
         # moving on the edge of the stable triangle (in order to visualize it).
         
-        x_triang =mon_separatrix.x[0, :]
+        x_triang = mon_separatrix.x[0, :]
         px_triang = mon_separatrix.px[0, :]
         x_norm_triang = nc_sep.x_norm[0, :]
         px_norm_triang = nc_sep.px_norm[0, :]
