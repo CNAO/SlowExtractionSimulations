@@ -1,0 +1,2822 @@
+{
+ "elements": {
+  "cnao3s0$start": {
+   "__class__": "Marker"
+  },
+  "se_010a_esp": {
+   "__class__": "Drift",
+   "length": 0.8
+  },
+  "se_011a_dri": {
+   "__class__": "Drift",
+   "length": 0.155
+  },
+  "se_012a_fls": {
+   "__class__": "Marker"
+  },
+  "se_013a_puh": {
+   "__class__": "Drift",
+   "length": 0.3
+  },
+  "se_014a_fls": {
+   "__class__": "Marker"
+  },
+  "se_015a_dri": {
+   "__class__": "Drift",
+   "length": 0.079
+  },
+  "drift_se_016a_csh..1": {
+   "__class__": "Drift",
+   "length": 0.146
+  },
+  "se_016a_csh": {
+   "__class__": "Multipole",
+   "length": 0.292
+  },
+  "drift_se_016a_csh..2": {
+   "__class__": "Drift",
+   "length": 0.146
+  },
+  "se_017a_dri": {
+   "__class__": "Drift",
+   "length": 0.119
+  },
+  "se_018a_qus": {
+   "__class__": "Quadrupole",
+   "length": 0.36,
+   "num_multipole_kicks": 15,
+   "k1": 0.26210028586166323,
+   "order": 5
+  },
+  "se_019a_bs1": {
+   "__class__": "Marker"
+  },
+  "se_020a_dri": {
+   "__class__": "Drift",
+   "length": 0.139
+  },
+  "se_021a_fls": {
+   "__class__": "Marker"
+  },
+  "se_022a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "se_022b_sip": {
+   "__class__": "Marker"
+  },
+  "sf_001a_mbs": {
+   "__class__": "Bend",
+   "length": 1.6772,
+   "edge_exit_hgap": 0.036,
+   "edge_entry_hgap": 0.036,
+   "k0": 0.2341396862031958,
+   "edge_exit_angle": 0.19634954085,
+   "_edge_exit_model": 1,
+   "h": 0.2341396862031958,
+   "num_multipole_kicks": 15,
+   "_edge_entry_model": 1,
+   "edge_entry_angle": 0.19634954085,
+   "model": "adaptive",
+   "order": 5
+  },
+  "sf_001c_mig": {
+   "__class__": "Marker"
+  },
+  "sf_002a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "sf_003a_fls": {
+   "__class__": "Marker"
+  },
+  "sf_004a_dri": {
+   "__class__": "Drift",
+   "length": 0.087
+  },
+  "drift_sf_005a_csv..1": {
+   "__class__": "Drift",
+   "length": 0.126
+  },
+  "sf_005a_csv": {
+   "__class__": "Multipole",
+   "length": 0.252
+  },
+  "drift_sf_005a_csv..2": {
+   "__class__": "Drift",
+   "length": 0.126
+  },
+  "sf_006a_dri": {
+   "__class__": "Drift",
+   "length": 0.1
+  },
+  "sf_007a_qus": {
+   "__class__": "Quadrupole",
+   "length": 0.36,
+   "num_multipole_kicks": 15,
+   "k1": -0.38711583850702824,
+   "order": 5
+  },
+  "sf_008a_bs1": {
+   "__class__": "Marker"
+  },
+  "sf_009a_dri": {
+   "__class__": "Drift",
+   "length": 0.139
+  },
+  "sf_010a_fls": {
+   "__class__": "Marker"
+  },
+  "sf_011a_puv": {
+   "__class__": "Drift",
+   "length": 0.3
+  },
+  "sf_012a_fls": {
+   "__class__": "Marker"
+  },
+  "sf_013a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "sf_013b_sip": {
+   "__class__": "Marker"
+  },
+  "s0_001a_mbs": {
+   "__class__": "Bend",
+   "length": 1.6772,
+   "edge_exit_hgap": 0.036,
+   "edge_entry_hgap": 0.036,
+   "k0": 0.2341396862031958,
+   "edge_exit_angle": 0.19634954085,
+   "_edge_exit_model": 1,
+   "h": 0.2341396862031958,
+   "num_multipole_kicks": 15,
+   "_edge_entry_model": 1,
+   "edge_entry_angle": 0.19634954085,
+   "model": "adaptive",
+   "order": 5
+  },
+  "s0_002a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "s0_003a_fls": {
+   "__class__": "Marker"
+  },
+  "s0_004a_dri": {
+   "__class__": "Drift",
+   "length": 0.109
+  },
+  "s0_005a_qus": {
+   "__class__": "Quadrupole",
+   "length": 0.36,
+   "num_multipole_kicks": 15,
+   "k1": 0.26210028586166323,
+   "order": 5
+  },
+  "s0_006a_bs1": {
+   "__class__": "Marker"
+  },
+  "s0_007a_dri": {
+   "__class__": "Drift",
+   "length": 0.101
+  },
+  "s0_008a_fls": {
+   "__class__": "Marker"
+  },
+  "s0_009a_puh": {
+   "__class__": "Drift",
+   "length": 0.3
+  },
+  "s0_010a_fls": {
+   "__class__": "Marker"
+  },
+  "s0_011a_dri": {
+   "__class__": "Drift",
+   "length": 0.061
+  },
+  "s0_012a_ssm": {
+   "__class__": "Marker"
+  },
+  "s0_013a_dri": {
+   "__class__": "Drift",
+   "length": 0.056
+  },
+  "s0_014a_dia": {
+   "__class__": "Marker"
+  },
+  "s0_015a_dri": {
+   "__class__": "Drift",
+   "length": 0.033
+  },
+  "s0_016a_msp": {
+   "__class__": "Drift",
+   "length": 0.65
+  },
+  "s0_017a_dri": {
+   "__class__": "Drift",
+   "length": 0.935
+  },
+  "s0_018a_dri": {
+   "__class__": "Drift",
+   "length": 0.159
+  },
+  "symp": {
+   "__class__": "Marker"
+  },
+  "s0_019a_dri": {
+   "__class__": "Drift",
+   "length": 0.096
+  },
+  "s0_020a_t45": {
+   "__class__": "Drift",
+   "length": 0.524
+  },
+  "s0_021a_fls": {
+   "__class__": "Marker"
+  },
+  "s0_022a_dri": {
+   "__class__": "Drift",
+   "length": 0.13
+  },
+  "s0_023a_esp": {
+   "__class__": "Drift",
+   "length": 0.6
+  },
+  "s0_024a_dri": {
+   "__class__": "Drift",
+   "length": 0.125
+  },
+  "s0_025a_fls": {
+   "__class__": "Marker"
+  },
+  "s0_026a_puh": {
+   "__class__": "Drift",
+   "length": 0.3
+  },
+  "s0_027a_fls": {
+   "__class__": "Marker"
+  },
+  "s0_028a_t60": {
+   "__class__": "Drift",
+   "length": 0.154
+  },
+  "drift_s0_029a_csh..1": {
+   "__class__": "Drift",
+   "length": 0.146
+  },
+  "s0_029a_csh": {
+   "__class__": "Multipole",
+   "length": 0.292
+  },
+  "drift_s0_029a_csh..2": {
+   "__class__": "Drift",
+   "length": 0.146
+  },
+  "s0_030a_dri": {
+   "__class__": "Drift",
+   "length": 0.074
+  },
+  "s0_031a_qus": {
+   "__class__": "Quadrupole",
+   "length": 0.36,
+   "num_multipole_kicks": 15,
+   "k1": 0.26210028586166323,
+   "order": 5
+  },
+  "s0_032a_bs1": {
+   "__class__": "Marker"
+  },
+  "s0_033a_dri": {
+   "__class__": "Drift",
+   "length": 0.109
+  },
+  "s0_034a_fls": {
+   "__class__": "Marker"
+  },
+  "s0_035a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "s0_035b_sip": {
+   "__class__": "Marker"
+  },
+  "s1_001a_mbs": {
+   "__class__": "Bend",
+   "length": 1.6772,
+   "edge_exit_hgap": 0.036,
+   "edge_entry_hgap": 0.036,
+   "k0": 0.2341396862031958,
+   "edge_exit_angle": 0.19634954085,
+   "_edge_exit_model": 1,
+   "h": 0.2341396862031958,
+   "num_multipole_kicks": 15,
+   "_edge_entry_model": 1,
+   "edge_entry_angle": 0.19634954085,
+   "model": "adaptive",
+   "order": 5
+  },
+  "s1_001c_mig": {
+   "__class__": "Marker"
+  },
+  "s1_002a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "s1_003a_fls": {
+   "__class__": "Marker"
+  },
+  "s1_004a_dri": {
+   "__class__": "Drift",
+   "length": 0.097
+  },
+  "drift_s1_005a_csv..1": {
+   "__class__": "Drift",
+   "length": 0.126
+  },
+  "s1_005a_csv": {
+   "__class__": "Multipole",
+   "length": 0.252
+  },
+  "drift_s1_005a_csv..2": {
+   "__class__": "Drift",
+   "length": 0.126
+  },
+  "s1_006a_dri": {
+   "__class__": "Drift",
+   "length": 0.09
+  },
+  "s1_007a_qus": {
+   "__class__": "Quadrupole",
+   "length": 0.36,
+   "num_multipole_kicks": 15,
+   "k1": -0.38711583850702824,
+   "order": 5
+  },
+  "s1_008a_bs1": {
+   "__class__": "Marker"
+  },
+  "s1_009a_dri": {
+   "__class__": "Drift",
+   "length": 0.139
+  },
+  "s1_010a_fls": {
+   "__class__": "Marker"
+  },
+  "s1_011a_puv": {
+   "__class__": "Drift",
+   "length": 0.3
+  },
+  "s1_012a_fls": {
+   "__class__": "Marker"
+  },
+  "s1_013a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "s1_013b_sip": {
+   "__class__": "Marker"
+  },
+  "s2_001a_mbs": {
+   "__class__": "Bend",
+   "length": 1.6772,
+   "edge_exit_hgap": 0.036,
+   "edge_entry_hgap": 0.036,
+   "k0": 0.2341396862031958,
+   "edge_exit_angle": 0.19634954085,
+   "_edge_exit_model": 1,
+   "h": 0.2341396862031958,
+   "num_multipole_kicks": 15,
+   "_edge_entry_model": 1,
+   "edge_entry_angle": 0.19634954085,
+   "model": "adaptive",
+   "order": 5
+  },
+  "s2_002a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "s2_003a_fls": {
+   "__class__": "Marker"
+  },
+  "s2_004a_dri": {
+   "__class__": "Drift",
+   "length": 0.139
+  },
+  "s2_005a_qus": {
+   "__class__": "Quadrupole",
+   "length": 0.36,
+   "num_multipole_kicks": 15,
+   "k1": 0.26210028586166323,
+   "order": 5
+  },
+  "s2_006a_bs1": {
+   "__class__": "Marker"
+  },
+  "s2_007a_dri": {
+   "__class__": "Drift",
+   "length": 0.07
+  },
+  "drift_s2_008a_csh..1": {
+   "__class__": "Drift",
+   "length": 0.146
+  },
+  "s2_008a_csh": {
+   "__class__": "Multipole",
+   "length": 0.292
+  },
+  "drift_s2_008a_csh..2": {
+   "__class__": "Drift",
+   "length": 0.146
+  },
+  "s2_009a_dri": {
+   "__class__": "Drift",
+   "length": 0.039
+  },
+  "s2_010a_fls": {
+   "__class__": "Marker"
+  },
+  "s2_011a_puh": {
+   "__class__": "Drift",
+   "length": 0.3
+  },
+  "s2_012a_fls": {
+   "__class__": "Marker"
+  },
+  "s2_013a_sva": {
+   "__class__": "Drift",
+   "length": 0.21
+  },
+  "s2_014a_fls": {
+   "__class__": "Marker"
+  },
+  "s2_015a_fct": {
+   "__class__": "Drift",
+   "length": 0.4
+  },
+  "s2_016a_bs1": {
+   "__class__": "Marker"
+  },
+  "s2_017a_fls": {
+   "__class__": "Marker"
+  },
+  "s2_018a_dri": {
+   "__class__": "Drift",
+   "length": 0.254
+  },
+  "s2_019a_sxc": {
+   "__class__": "Sextupole",
+   "length": 0.26,
+   "k2": -0.044962140055820596,
+   "order": 5
+  },
+  "s2_020a_dri": {
+   "__class__": "Drift",
+   "length": 0.165
+  },
+  "s2_021a_qus": {
+   "__class__": "Quadrupole",
+   "length": 0.36,
+   "num_multipole_kicks": 15,
+   "k1": 0.47080588014796365,
+   "order": 5
+  },
+  "s2_022a_bs1": {
+   "__class__": "Marker"
+  },
+  "s2_023a_dri": {
+   "__class__": "Drift",
+   "length": 0.139
+  },
+  "s2_024a_fls": {
+   "__class__": "Marker"
+  },
+  "s2_025a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "s2_025b_sip": {
+   "__class__": "Marker"
+  },
+  "s3_001a_mbs": {
+   "__class__": "Bend",
+   "length": 1.6772,
+   "edge_exit_hgap": 0.036,
+   "edge_entry_hgap": 0.036,
+   "k0": 0.2341396862031958,
+   "edge_exit_angle": 0.19634954085,
+   "_edge_exit_model": 1,
+   "h": 0.2341396862031958,
+   "num_multipole_kicks": 15,
+   "_edge_entry_model": 1,
+   "edge_entry_angle": 0.19634954085,
+   "model": "adaptive",
+   "order": 5
+  },
+  "s3_001c_mig": {
+   "__class__": "Marker"
+  },
+  "s3_002a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "s3_003a_fls": {
+   "__class__": "Marker"
+  },
+  "s3_004a_dri": {
+   "__class__": "Drift",
+   "length": 0.047
+  },
+  "drift_s3_005a_csv..1": {
+   "__class__": "Drift",
+   "length": 0.126
+  },
+  "s3_005a_csv": {
+   "__class__": "Multipole",
+   "length": 0.252
+  },
+  "drift_s3_005a_csv..2": {
+   "__class__": "Drift",
+   "length": 0.126
+  },
+  "s3_006a_bs1": {
+   "__class__": "Marker"
+  },
+  "s3_007a_dri": {
+   "__class__": "Drift",
+   "length": 0.047
+  },
+  "s3_008a_fls": {
+   "__class__": "Marker"
+  },
+  "s3_009a_dri": {
+   "__class__": "Drift",
+   "length": 0.075
+  },
+  "s3_010a_bds": {
+   "__class__": "Bend",
+   "length": 0.225,
+   "_edge_exit_model": 1,
+   "num_multipole_kicks": 15,
+   "_edge_entry_model": 1,
+   "edge_entry_angle": 0.0027,
+   "model": "adaptive",
+   "order": 5
+  },
+  "s3_011a_dri": {
+   "__class__": "Drift",
+   "length": 0.05
+  },
+  "s3_012a_bdi": {
+   "__class__": "Bend",
+   "length": 0.295,
+   "_edge_exit_model": 1,
+   "num_multipole_kicks": 15,
+   "_edge_entry_model": 1,
+   "model": "adaptive",
+   "order": 5
+  },
+  "s3_013a_dri": {
+   "__class__": "Drift",
+   "length": 0.045
+  },
+  "s3_014a_fls": {
+   "__class__": "Marker"
+  },
+  "s3_015a_dri": {
+   "__class__": "Drift",
+   "length": 0.103
+  },
+  "s3_016a_qus": {
+   "__class__": "Quadrupole",
+   "length": 0.36,
+   "num_multipole_kicks": 15,
+   "k1": -0.38711583850702824,
+   "order": 5
+  },
+  "s3_017a_bs1": {
+   "__class__": "Marker"
+  },
+  "s3_018a_dri": {
+   "__class__": "Drift",
+   "length": 0.139
+  },
+  "s3_019a_fls": {
+   "__class__": "Marker"
+  },
+  "s3_020a_puv": {
+   "__class__": "Drift",
+   "length": 0.3
+  },
+  "s3_021a_fls": {
+   "__class__": "Marker"
+  },
+  "s3_022a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "s3_022b_sip": {
+   "__class__": "Marker"
+  },
+  "s4_001a_mbs": {
+   "__class__": "Bend",
+   "length": 1.6772,
+   "edge_exit_hgap": 0.036,
+   "edge_entry_hgap": 0.036,
+   "k0": 0.2341396862031958,
+   "edge_exit_angle": 0.19634954085,
+   "_edge_exit_model": 1,
+   "h": 0.2341396862031958,
+   "num_multipole_kicks": 15,
+   "_edge_entry_model": 1,
+   "edge_entry_angle": 0.19634954085,
+   "model": "adaptive",
+   "order": 5
+  },
+  "s4_002a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "s4_003a_fls": {
+   "__class__": "Marker"
+  },
+  "s4_004a_dri": {
+   "__class__": "Drift",
+   "length": 0.139
+  },
+  "s4_005a_qus": {
+   "__class__": "Quadrupole",
+   "length": 0.36,
+   "num_multipole_kicks": 15,
+   "k1": 0.47080588014796365,
+   "order": 5
+  },
+  "s4_006a_bs1": {
+   "__class__": "Marker"
+  },
+  "s4_007a_dri": {
+   "__class__": "Drift",
+   "length": 0.08
+  },
+  "drift_s4_008a_csh..1": {
+   "__class__": "Drift",
+   "length": 0.146
+  },
+  "s4_008a_csh": {
+   "__class__": "Multipole",
+   "length": 0.292
+  },
+  "drift_s4_008a_csh..2": {
+   "__class__": "Drift",
+   "length": 0.146
+  },
+  "s4_009a_dri": {
+   "__class__": "Drift",
+   "length": 0.079
+  },
+  "s4_010a_fls": {
+   "__class__": "Marker"
+  },
+  "s4_011a_puh": {
+   "__class__": "Drift",
+   "length": 0.3
+  },
+  "s4_012a_fls": {
+   "__class__": "Marker"
+  },
+  "s4_013a_dri": {
+   "__class__": "Drift",
+   "length": 0.075
+  },
+  "s4_014a_bs1": {
+   "__class__": "Marker"
+  },
+  "s4_015a_bec": {
+   "__class__": "Drift",
+   "length": 1.5
+  },
+  "s4_016a_bs1": {
+   "__class__": "Marker"
+  },
+  "s4_017a_dri": {
+   "__class__": "Drift",
+   "length": 0.075
+  },
+  "s4_018a_fls": {
+   "__class__": "Marker"
+  },
+  "s4_019a_dri": {
+   "__class__": "Drift",
+   "length": 0.07
+  },
+  "s4_020a_qkh": {
+   "__class__": "Bend",
+   "length": 0.246,
+   "_edge_exit_model": 1,
+   "num_multipole_kicks": 15,
+   "_edge_entry_model": 1,
+   "model": "adaptive",
+   "order": 5
+  },
+  "s4_021a_dri": {
+   "__class__": "Drift",
+   "length": 0.1
+  },
+  "s4_022a_qkv": {
+   "__class__": "Bend",
+   "length": 0.246,
+   "_edge_exit_model": 1,
+   "num_multipole_kicks": 15,
+   "_edge_entry_model": 1,
+   "model": "adaptive",
+   "order": 5
+  },
+  "s4_023a_dri": {
+   "__class__": "Drift",
+   "length": 0.127
+  },
+  "s4_024a_qus": {
+   "__class__": "Quadrupole",
+   "length": 0.36,
+   "num_multipole_kicks": 15,
+   "k1": 0.47080588014796365,
+   "order": 5
+  },
+  "s4_025a_bs1": {
+   "__class__": "Marker"
+  },
+  "s4_026a_dri": {
+   "__class__": "Drift",
+   "length": 0.139
+  },
+  "s4_027a_fls": {
+   "__class__": "Marker"
+  },
+  "s4_028a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "s4_028b_sip": {
+   "__class__": "Marker"
+  },
+  "s5_001a_mbs": {
+   "__class__": "Bend",
+   "length": 1.6772,
+   "edge_exit_hgap": 0.036,
+   "edge_entry_hgap": 0.036,
+   "k0": 0.2341396862031958,
+   "edge_exit_angle": 0.19634954085,
+   "_edge_exit_model": 1,
+   "h": 0.2341396862031958,
+   "num_multipole_kicks": 15,
+   "_edge_entry_model": 1,
+   "edge_entry_angle": 0.19634954085,
+   "model": "adaptive",
+   "order": 5
+  },
+  "s5_001c_mig": {
+   "__class__": "Marker"
+  },
+  "s5_002a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "s5_003a_fls": {
+   "__class__": "Marker"
+  },
+  "s5_004a_dri": {
+   "__class__": "Drift",
+   "length": 0.097
+  },
+  "drift_s5_005a_csv..1": {
+   "__class__": "Drift",
+   "length": 0.126
+  },
+  "s5_005a_csv": {
+   "__class__": "Multipole",
+   "length": 0.252
+  },
+  "drift_s5_005a_csv..2": {
+   "__class__": "Drift",
+   "length": 0.126
+  },
+  "s5_006a_dri": {
+   "__class__": "Drift",
+   "length": 0.09
+  },
+  "s5_007a_qus": {
+   "__class__": "Quadrupole",
+   "length": 0.36,
+   "num_multipole_kicks": 15,
+   "k1": -0.38711583850702824,
+   "order": 5
+  },
+  "s5_008a_bs1": {
+   "__class__": "Marker"
+  },
+  "s5_009a_dri": {
+   "__class__": "Drift",
+   "length": 0.095
+  },
+  "s5_010a_dpv": {
+   "__class__": "Drift",
+   "length": 0.1
+  },
+  "s5_011a_dri": {
+   "__class__": "Drift",
+   "length": 0.3
+  },
+  "s5_012a_sxc": {
+   "__class__": "Sextupole",
+   "length": 0.26,
+   "k2": -0.2323602334990238,
+   "order": 5
+  },
+  "s5_013a_dri": {
+   "__class__": "Drift",
+   "length": 0.084
+  },
+  "s5_014a_fls": {
+   "__class__": "Marker"
+  },
+  "s5_015a_puv": {
+   "__class__": "Drift",
+   "length": 0.3
+  },
+  "s5_016a_fls": {
+   "__class__": "Marker"
+  },
+  "s5_017a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "s5_017b_sip": {
+   "__class__": "Marker"
+  },
+  "s6_001a_mbs": {
+   "__class__": "Bend",
+   "length": 1.6772,
+   "edge_exit_hgap": 0.036,
+   "edge_entry_hgap": 0.036,
+   "k0": 0.2341396862031958,
+   "edge_exit_angle": 0.19634954085,
+   "_edge_exit_model": 1,
+   "h": 0.2341396862031958,
+   "num_multipole_kicks": 15,
+   "_edge_entry_model": 1,
+   "edge_entry_angle": 0.19634954085,
+   "model": "adaptive",
+   "order": 5
+  },
+  "s6_002a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "s6_003a_fls": {
+   "__class__": "Marker"
+  },
+  "s6_004a_dri": {
+   "__class__": "Drift",
+   "length": 0.139
+  },
+  "s6_005a_qus": {
+   "__class__": "Quadrupole",
+   "length": 0.36,
+   "num_multipole_kicks": 15,
+   "k1": 0.47080588014796365,
+   "order": 5
+  },
+  "s6_006a_bs1": {
+   "__class__": "Marker"
+  },
+  "s6_007a_dri": {
+   "__class__": "Drift",
+   "length": 0.103
+  },
+  "s6_008a_fls": {
+   "__class__": "Marker"
+  },
+  "s6_009a_puh": {
+   "__class__": "Drift",
+   "length": 0.3
+  },
+  "s6_010a_fls": {
+   "__class__": "Marker"
+  },
+  "s6_011a_dri": {
+   "__class__": "Drift",
+   "length": 0.048
+  },
+  "s6_012a_acq": {
+   "__class__": "Quadrupole",
+   "length": 0.5,
+   "num_multipole_kicks": 15,
+   "order": 5
+  },
+  "s6_013a_dri": {
+   "__class__": "Drift",
+   "length": 0.067
+  },
+  "drift_s6_014a_csh..1": {
+   "__class__": "Drift",
+   "length": 0.146
+  },
+  "s6_014a_csh": {
+   "__class__": "Multipole",
+   "length": 0.292
+  },
+  "drift_s6_014a_csh..2": {
+   "__class__": "Drift",
+   "length": 0.146
+  },
+  "s6_015a_dri": {
+   "__class__": "Drift",
+   "length": 0.179
+  },
+  "s6_016a_bs1": {
+   "__class__": "Marker"
+  },
+  "s6_017a_fls": {
+   "__class__": "Marker"
+  },
+  "s6_018a_shh": {
+   "__class__": "Drift",
+   "length": 0.501
+  },
+  "s6_019a_qus": {
+   "__class__": "Quadrupole",
+   "length": 0.36,
+   "num_multipole_kicks": 15,
+   "k1": 0.26210028586166323,
+   "order": 5
+  },
+  "s6_020a_she": {
+   "__class__": "Drift",
+   "length": 0.139
+  },
+  "s6_021a_fls": {
+   "__class__": "Marker"
+  },
+  "s6_022a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "s6_022b_sip": {
+   "__class__": "Marker"
+  },
+  "s7_001a_mbs": {
+   "__class__": "Bend",
+   "length": 1.6772,
+   "edge_exit_hgap": 0.036,
+   "edge_entry_hgap": 0.036,
+   "k0": 0.2341396862031958,
+   "edge_exit_angle": 0.19634954085,
+   "_edge_exit_model": 1,
+   "h": 0.2341396862031958,
+   "num_multipole_kicks": 15,
+   "_edge_entry_model": 1,
+   "edge_entry_angle": 0.19634954085,
+   "model": "adaptive",
+   "order": 5
+  },
+  "s7_001c_mig": {
+   "__class__": "Marker"
+  },
+  "s7_002a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "s7_003a_fls": {
+   "__class__": "Marker"
+  },
+  "s7_004a_dri": {
+   "__class__": "Drift",
+   "length": 0.087
+  },
+  "drift_s7_005a_csv..1": {
+   "__class__": "Drift",
+   "length": 0.126
+  },
+  "s7_005a_csv": {
+   "__class__": "Multipole",
+   "length": 0.252
+  },
+  "drift_s7_005a_csv..2": {
+   "__class__": "Drift",
+   "length": 0.126
+  },
+  "s7_006a_dri": {
+   "__class__": "Drift",
+   "length": 0.1
+  },
+  "s7_007a_qus": {
+   "__class__": "Quadrupole",
+   "length": 0.36,
+   "num_multipole_kicks": 15,
+   "k1": -0.38711583850702824,
+   "order": 5
+  },
+  "s7_008a_bs1": {
+   "__class__": "Marker"
+  },
+  "s7_009a_dri": {
+   "__class__": "Drift",
+   "length": 0.139
+  },
+  "s7_010a_fls": {
+   "__class__": "Marker"
+  },
+  "s7_011a_puv": {
+   "__class__": "Drift",
+   "length": 0.3
+  },
+  "s7_012a_fls": {
+   "__class__": "Marker"
+  },
+  "s7_013a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "s7_013b_sip": {
+   "__class__": "Marker"
+  },
+  "s8_001a_mbs": {
+   "__class__": "Bend",
+   "length": 1.6772,
+   "edge_exit_hgap": 0.036,
+   "edge_entry_hgap": 0.036,
+   "k0": 0.2341396862031958,
+   "edge_exit_angle": 0.19634954085,
+   "_edge_exit_model": 1,
+   "h": 0.2341396862031958,
+   "num_multipole_kicks": 15,
+   "_edge_entry_model": 1,
+   "edge_entry_angle": 0.19634954085,
+   "model": "adaptive",
+   "order": 5
+  },
+  "s8_002a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "s8_003a_fls": {
+   "__class__": "Marker"
+  },
+  "s8_004a_dri": {
+   "__class__": "Drift",
+   "length": 0.109
+  },
+  "s8_005a_qus": {
+   "__class__": "Quadrupole",
+   "length": 0.36,
+   "num_multipole_kicks": 15,
+   "k1": 0.26210028586166323,
+   "order": 5
+  },
+  "s8_006a_bs1": {
+   "__class__": "Marker"
+  },
+  "s8_007a_dri": {
+   "__class__": "Drift",
+   "length": 0.08
+  },
+  "drift_s8_008a_csh..1": {
+   "__class__": "Drift",
+   "length": 0.146
+  },
+  "s8_008a_csh": {
+   "__class__": "Multipole",
+   "length": 0.292
+  },
+  "drift_s8_008a_csh..2": {
+   "__class__": "Drift",
+   "length": 0.146
+  },
+  "s8_009a_dri": {
+   "__class__": "Drift",
+   "length": 0.059
+  },
+  "s8_010a_fls": {
+   "__class__": "Marker"
+  },
+  "s8_011a_puh": {
+   "__class__": "Drift",
+   "length": 0.3
+  },
+  "s8_012a_fls": {
+   "__class__": "Marker"
+  },
+  "s8_013a_sva": {
+   "__class__": "Drift",
+   "length": 0.21
+  },
+  "s8_014a_fls": {
+   "__class__": "Marker"
+  },
+  "s8_015a_dri": {
+   "__class__": "Drift",
+   "length": 0.2072
+  },
+  "s8_016a_bde": {
+   "__class__": "Bend",
+   "length": 0.225,
+   "edge_exit_hgap": 0.083,
+   "edge_entry_hgap": 0.083,
+   "edge_exit_angle": 0.0054,
+   "_edge_exit_model": 1,
+   "num_multipole_kicks": 15,
+   "_edge_entry_model": 1,
+   "model": "adaptive",
+   "order": 5
+  },
+  "s8_017a_dri": {
+   "__class__": "Drift",
+   "length": 0.0858
+  },
+  "s8_018a_fls": {
+   "__class__": "Marker"
+  },
+  "s8_019a_bs1": {
+   "__class__": "Marker"
+  },
+  "s8_020a_cav": {
+   "__class__": "Drift",
+   "length": 1.6
+  },
+  "s8_020b_slc": {
+   "__class__": "Drift"
+  },
+  "s8_020c_g1c": {
+   "__class__": "Drift"
+  },
+  "s8_020d_g1c": {
+   "__class__": "Drift"
+  },
+  "s8_020e_g2c": {
+   "__class__": "Drift"
+  },
+  "s8_020f_g2c": {
+   "__class__": "Drift"
+  },
+  "s8_020h_anc": {
+   "__class__": "Drift"
+  },
+  "s8_020i_gfv": {
+   "__class__": "Drift"
+  },
+  "s8_020l_gff": {
+   "__class__": "Drift"
+  },
+  "s8_020m_gfi": {
+   "__class__": "Drift"
+  },
+  "s8_020n_gfp": {
+   "__class__": "Drift"
+  },
+  "s8_020o_gfr": {
+   "__class__": "Drift"
+  },
+  "s8_021a_bs1": {
+   "__class__": "Marker"
+  },
+  "s8_022a_fls": {
+   "__class__": "Marker"
+  },
+  "s8_023a_dri": {
+   "__class__": "Drift",
+   "length": 0.05
+  },
+  "s8_024a_skq": {
+   "__class__": "Quadrupole",
+   "length": 0.25,
+   "num_multipole_kicks": 15,
+   "order": 5
+  },
+  "s8_025a_dri": {
+   "__class__": "Drift",
+   "length": 0.032
+  },
+  "s8_026a_sch": {
+   "__class__": "Drift",
+   "length": 0.082
+  },
+  "s8_027a_dri": {
+   "__class__": "Drift",
+   "length": 0.056
+  },
+  "s8_028a_sxr": {
+   "__class__": "Sextupole",
+   "length": 0.26,
+   "k2": -3.3015954716218534,
+   "order": 5
+  },
+  "s8_029a_spu": {
+   "__class__": "Drift"
+  },
+  "s8_030a_dri": {
+   "__class__": "Drift",
+   "length": 0.07
+  },
+  "s8_031a_fls": {
+   "__class__": "Marker"
+  },
+  "s8_032a_puh": {
+   "__class__": "Drift",
+   "length": 0.3
+  },
+  "s8_033a_fls": {
+   "__class__": "Marker"
+  },
+  "s8_034a_dri": {
+   "__class__": "Drift",
+   "length": 0.069
+  },
+  "drift_s8_035a_csh..1": {
+   "__class__": "Drift",
+   "length": 0.146
+  },
+  "s8_035a_csh": {
+   "__class__": "Multipole",
+   "length": 0.292
+  },
+  "drift_s8_035a_csh..2": {
+   "__class__": "Drift",
+   "length": 0.146
+  },
+  "s8_036a_dri": {
+   "__class__": "Drift",
+   "length": 0.07
+  },
+  "s8_037a_qus": {
+   "__class__": "Quadrupole",
+   "length": 0.36,
+   "num_multipole_kicks": 15,
+   "k1": 0.26210028586166323,
+   "order": 5
+  },
+  "s8_038a_bs1": {
+   "__class__": "Marker"
+  },
+  "s8_039a_dri": {
+   "__class__": "Drift",
+   "length": 0.109
+  },
+  "s8_040a_fls": {
+   "__class__": "Marker"
+  },
+  "s8_041a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "s8_041b_sip": {
+   "__class__": "Marker"
+  },
+  "s9_001a_mbs": {
+   "__class__": "Bend",
+   "length": 1.6772,
+   "edge_exit_hgap": 0.036,
+   "edge_entry_hgap": 0.036,
+   "k0": 0.2341396862031958,
+   "edge_exit_angle": 0.19634954085,
+   "_edge_exit_model": 1,
+   "h": 0.2341396862031958,
+   "num_multipole_kicks": 15,
+   "_edge_entry_model": 1,
+   "edge_entry_angle": 0.19634954085,
+   "model": "adaptive",
+   "order": 5
+  },
+  "s9_001c_mig": {
+   "__class__": "Marker"
+  },
+  "s9_002a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "s9_003a_fls": {
+   "__class__": "Marker"
+  },
+  "s9_004a_dri": {
+   "__class__": "Drift",
+   "length": 0.097
+  },
+  "drift_s9_005a_csv..1": {
+   "__class__": "Drift",
+   "length": 0.126
+  },
+  "s9_005a_csv": {
+   "__class__": "Multipole",
+   "length": 0.252
+  },
+  "drift_s9_005a_csv..2": {
+   "__class__": "Drift",
+   "length": 0.126
+  },
+  "s9_006a_dri": {
+   "__class__": "Drift",
+   "length": 0.09
+  },
+  "s9_007a_qus": {
+   "__class__": "Quadrupole",
+   "length": 0.36,
+   "num_multipole_kicks": 15,
+   "k1": -0.38711583850702824,
+   "order": 5
+  },
+  "s9_008a_bs1": {
+   "__class__": "Marker"
+  },
+  "s9_009a_dri": {
+   "__class__": "Drift",
+   "length": 0.139
+  },
+  "s9_010a_fls": {
+   "__class__": "Marker"
+  },
+  "s9_011a_puv": {
+   "__class__": "Drift",
+   "length": 0.3
+  },
+  "s9_012a_fls": {
+   "__class__": "Marker"
+  },
+  "s9_013a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "s9_013b_sip": {
+   "__class__": "Marker"
+  },
+  "sa_001a_mbs": {
+   "__class__": "Bend",
+   "length": 1.6772,
+   "edge_exit_hgap": 0.036,
+   "edge_entry_hgap": 0.036,
+   "k0": 0.2341396862031958,
+   "edge_exit_angle": 0.19634954085,
+   "_edge_exit_model": 1,
+   "h": 0.2341396862031958,
+   "num_multipole_kicks": 15,
+   "_edge_entry_model": 1,
+   "edge_entry_angle": 0.19634954085,
+   "model": "adaptive",
+   "order": 5
+  },
+  "sa_002a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "sa_003a_fls": {
+   "__class__": "Marker"
+  },
+  "sa_004a_dri": {
+   "__class__": "Drift",
+   "length": 0.139
+  },
+  "sa_005a_qus": {
+   "__class__": "Quadrupole",
+   "length": 0.36,
+   "num_multipole_kicks": 15,
+   "k1": 0.26210028586166323,
+   "order": 5
+  },
+  "sa_006a_bs1": {
+   "__class__": "Marker"
+  },
+  "sa_007a_dri": {
+   "__class__": "Drift",
+   "length": 0.07
+  },
+  "drift_sa_008a_csh..1": {
+   "__class__": "Drift",
+   "length": 0.146
+  },
+  "sa_008a_csh": {
+   "__class__": "Multipole",
+   "length": 0.292
+  },
+  "drift_sa_008a_csh..2": {
+   "__class__": "Drift",
+   "length": 0.146
+  },
+  "sa_009a_dri": {
+   "__class__": "Drift",
+   "length": 0.039
+  },
+  "sa_010a_fls": {
+   "__class__": "Marker"
+  },
+  "sa_011a_puh": {
+   "__class__": "Drift",
+   "length": 0.3
+  },
+  "sa_012a_fls": {
+   "__class__": "Marker"
+  },
+  "sa_013a_dri": {
+   "__class__": "Drift",
+   "length": 0.05
+  },
+  "sa_014a_rgb": {
+   "__class__": "Drift",
+   "length": 0.6
+  },
+  "sa_015a_dri": {
+   "__class__": "Drift",
+   "length": 0.05
+  },
+  "sa_016a_fls": {
+   "__class__": "Marker"
+  },
+  "sa_017a_dri": {
+   "__class__": "Drift",
+   "length": 0.164
+  },
+  "sa_018a_sxc": {
+   "__class__": "Sextupole",
+   "length": 0.26,
+   "k2": -0.044962140055820596,
+   "order": 5
+  },
+  "sa_019a_dri": {
+   "__class__": "Drift",
+   "length": 0.165
+  },
+  "sa_020a_qus": {
+   "__class__": "Quadrupole",
+   "length": 0.36,
+   "num_multipole_kicks": 15,
+   "k1": 0.47080588014796365,
+   "order": 5
+  },
+  "sa_021a_bs1": {
+   "__class__": "Marker"
+  },
+  "sa_022a_dri": {
+   "__class__": "Drift",
+   "length": 0.139
+  },
+  "sa_023a_fls": {
+   "__class__": "Marker"
+  },
+  "sa_024a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "sa_024b_sip": {
+   "__class__": "Marker"
+  },
+  "sb_001a_mbs": {
+   "__class__": "Bend",
+   "length": 1.6772,
+   "edge_exit_hgap": 0.036,
+   "edge_entry_hgap": 0.036,
+   "k0": 0.2341396862031958,
+   "edge_exit_angle": 0.19634954085,
+   "_edge_exit_model": 1,
+   "h": 0.2341396862031958,
+   "num_multipole_kicks": 15,
+   "_edge_entry_model": 1,
+   "edge_entry_angle": 0.19634954085,
+   "model": "adaptive",
+   "order": 5
+  },
+  "sb_001c_mig": {
+   "__class__": "Marker"
+  },
+  "sb_002a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "sb_003a_fls": {
+   "__class__": "Marker"
+  },
+  "sb_004a_dri": {
+   "__class__": "Drift",
+   "length": 0.085
+  },
+  "sb_005a_scv": {
+   "__class__": "Drift",
+   "length": 0.096
+  },
+  "sb_006a_dri": {
+   "__class__": "Drift",
+   "length": 0.056
+  },
+  "drift_sb_007a_csv..1": {
+   "__class__": "Drift",
+   "length": 0.126
+  },
+  "sb_007a_csv": {
+   "__class__": "Multipole",
+   "length": 0.252
+  },
+  "drift_sb_007a_csv..2": {
+   "__class__": "Drift",
+   "length": 0.126
+  },
+  "sb_008a_bs1": {
+   "__class__": "Marker"
+  },
+  "sb_009a_dri": {
+   "__class__": "Drift",
+   "length": 0.149
+  },
+  "sb_010a_fls": {
+   "__class__": "Marker"
+  },
+  "sb_011a_shv": {
+   "__class__": "Drift",
+   "length": 0.501
+  },
+  "sb_012a_qus": {
+   "__class__": "Quadrupole",
+   "length": 0.36,
+   "num_multipole_kicks": 15,
+   "k1": -0.38711583850702824,
+   "order": 5
+  },
+  "sb_013a_she": {
+   "__class__": "Drift",
+   "length": 0.139
+  },
+  "sb_014a_fls": {
+   "__class__": "Marker"
+  },
+  "sb_015a_puv": {
+   "__class__": "Drift",
+   "length": 0.3
+  },
+  "sb_016a_fls": {
+   "__class__": "Marker"
+  },
+  "sb_017a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "sb_017b_sip": {
+   "__class__": "Marker"
+  },
+  "sc_001a_mbs": {
+   "__class__": "Bend",
+   "length": 1.6772,
+   "edge_exit_hgap": 0.036,
+   "edge_entry_hgap": 0.036,
+   "k0": 0.2341396862031958,
+   "edge_exit_angle": 0.19634954085,
+   "_edge_exit_model": 1,
+   "h": 0.2341396862031958,
+   "num_multipole_kicks": 15,
+   "_edge_entry_model": 1,
+   "edge_entry_angle": 0.19634954085,
+   "model": "adaptive",
+   "order": 5
+  },
+  "sc_002a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "sc_003a_fls": {
+   "__class__": "Marker"
+  },
+  "sc_004a_dri": {
+   "__class__": "Drift",
+   "length": 0.139
+  },
+  "sc_005a_qus": {
+   "__class__": "Quadrupole",
+   "length": 0.36,
+   "num_multipole_kicks": 15,
+   "k1": 0.47080588014796365,
+   "order": 5
+  },
+  "sc_006a_bs1": {
+   "__class__": "Marker"
+  },
+  "sc_007a_dri": {
+   "__class__": "Drift",
+   "length": 0.07
+  },
+  "drift_sc_008a_csh..1": {
+   "__class__": "Drift",
+   "length": 0.146
+  },
+  "sc_008a_csh": {
+   "__class__": "Multipole",
+   "length": 0.292
+  },
+  "drift_sc_008a_csh..2": {
+   "__class__": "Drift",
+   "length": 0.146
+  },
+  "sc_009a_dri": {
+   "__class__": "Drift",
+   "length": 0.039
+  },
+  "sc_010a_fls": {
+   "__class__": "Marker"
+  },
+  "sc_011a_puh": {
+   "__class__": "Drift",
+   "length": 0.3
+  },
+  "sc_012a_fls": {
+   "__class__": "Marker"
+  },
+  "sc_013a_dct": {
+   "__class__": "Drift",
+   "length": 1.0
+  },
+  "sc_014a_bs1": {
+   "__class__": "Marker"
+  },
+  "sc_015a_fls": {
+   "__class__": "Marker"
+  },
+  "sc_016a_puh": {
+   "__class__": "Drift",
+   "length": 0.3
+  },
+  "sc_017a_fls": {
+   "__class__": "Marker"
+  },
+  "sc_018a_sva": {
+   "__class__": "Drift",
+   "length": 0.21
+  },
+  "sc_019a_fls": {
+   "__class__": "Marker"
+  },
+  "sc_020a_dri": {
+   "__class__": "Drift",
+   "length": 0.157
+  },
+  "drift_sc_021a_csh..1": {
+   "__class__": "Drift",
+   "length": 0.146
+  },
+  "sc_021a_csh": {
+   "__class__": "Multipole",
+   "length": 0.292
+  },
+  "drift_sc_021a_csh..2": {
+   "__class__": "Drift",
+   "length": 0.146
+  },
+  "sc_022a_dri": {
+   "__class__": "Drift",
+   "length": 0.079
+  },
+  "sc_023a_dph": {
+   "__class__": "Drift",
+   "length": 0.1
+  },
+  "sc_024a_dri": {
+   "__class__": "Drift",
+   "length": 0.351
+  },
+  "sc_025a_qus": {
+   "__class__": "Quadrupole",
+   "length": 0.36,
+   "num_multipole_kicks": 15,
+   "k1": 0.47080588014796365,
+   "order": 5
+  },
+  "sc_026a_bs1": {
+   "__class__": "Marker"
+  },
+  "sc_027a_dri": {
+   "__class__": "Drift",
+   "length": 0.139
+  },
+  "sc_028a_fls": {
+   "__class__": "Marker"
+  },
+  "sc_029a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "sc_029b_sip": {
+   "__class__": "Marker"
+  },
+  "sd_001a_mbs": {
+   "__class__": "Bend",
+   "length": 1.6772,
+   "edge_exit_hgap": 0.036,
+   "edge_entry_hgap": 0.036,
+   "k0": 0.2341396862031958,
+   "edge_exit_angle": 0.19634954085,
+   "_edge_exit_model": 1,
+   "h": 0.2341396862031958,
+   "num_multipole_kicks": 15,
+   "_edge_entry_model": 1,
+   "edge_entry_angle": 0.19634954085,
+   "model": "adaptive",
+   "order": 5
+  },
+  "sd_001c_mig": {
+   "__class__": "Marker"
+  },
+  "sd_002a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "sd_003a_fls": {
+   "__class__": "Marker"
+  },
+  "sd_004a_dri": {
+   "__class__": "Drift",
+   "length": 0.097
+  },
+  "drift_sd_005a_csv..1": {
+   "__class__": "Drift",
+   "length": 0.126
+  },
+  "sd_005a_csv": {
+   "__class__": "Multipole",
+   "length": 0.252
+  },
+  "drift_sd_005a_csv..2": {
+   "__class__": "Drift",
+   "length": 0.126
+  },
+  "sd_006a_dri": {
+   "__class__": "Drift",
+   "length": 0.09
+  },
+  "sd_007a_qus": {
+   "__class__": "Quadrupole",
+   "length": 0.36,
+   "num_multipole_kicks": 15,
+   "k1": -0.38711583850702824,
+   "order": 5
+  },
+  "sd_008a_bs1": {
+   "__class__": "Marker"
+  },
+  "sd_009a_dri": {
+   "__class__": "Drift",
+   "length": 0.101
+  },
+  "sd_010a_fls": {
+   "__class__": "Marker"
+  },
+  "sd_011a_dri": {
+   "__class__": "Drift",
+   "length": 0.047
+  },
+  "sd_012a_bdi": {
+   "__class__": "Bend",
+   "length": 0.295,
+   "_edge_exit_model": 1,
+   "num_multipole_kicks": 15,
+   "_edge_entry_model": 1,
+   "model": "adaptive",
+   "order": 5
+  },
+  "sd_013a_dri": {
+   "__class__": "Drift",
+   "length": 0.052
+  },
+  "sd_014a_sxc": {
+   "__class__": "Sextupole",
+   "length": 0.26,
+   "k2": -0.2323602334990238,
+   "order": 5
+  },
+  "sd_015a_bs1": {
+   "__class__": "Marker"
+  },
+  "sd_016a_dri": {
+   "__class__": "Drift",
+   "length": 0.084
+  },
+  "sd_017a_fls": {
+   "__class__": "Marker"
+  },
+  "sd_018a_puv": {
+   "__class__": "Drift",
+   "length": 0.3
+  },
+  "sd_019a_fls": {
+   "__class__": "Marker"
+  },
+  "sd_020a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "sd_020b_sip": {
+   "__class__": "Marker"
+  },
+  "se_001a_mbs": {
+   "__class__": "Bend",
+   "length": 1.6772,
+   "edge_exit_hgap": 0.036,
+   "edge_entry_hgap": 0.036,
+   "k0": 0.2341396862031958,
+   "edge_exit_angle": 0.19634954085,
+   "_edge_exit_model": 1,
+   "h": 0.2341396862031958,
+   "num_multipole_kicks": 15,
+   "_edge_entry_model": 1,
+   "edge_entry_angle": 0.19634954085,
+   "model": "adaptive",
+   "order": 5
+  },
+  "se_002a_dri": {
+   "__class__": "Drift",
+   "length": 0.2101525103
+  },
+  "se_003a_fls": {
+   "__class__": "Marker"
+  },
+  "se_004a_dri": {
+   "__class__": "Drift",
+   "length": 0.139
+  },
+  "se_005a_qus": {
+   "__class__": "Quadrupole",
+   "length": 0.36,
+   "num_multipole_kicks": 15,
+   "k1": 0.47080588014796365,
+   "order": 5
+  },
+  "se_006a_bs1": {
+   "__class__": "Marker"
+  },
+  "se_007a_dri": {
+   "__class__": "Drift",
+   "length": 0.145
+  },
+  "se_008a_fls": {
+   "__class__": "Marker"
+  },
+  "se_009a_dri": {
+   "__class__": "Drift",
+   "length": 0.1
+  },
+  "cnao3s0$end": {
+   "__class__": "Marker"
+  },
+  "septum_aperture": {
+   "__class__": "LimitRect",
+   "min_y": -10000000000.0,
+   "max_x": 0.1,
+   "max_y": 10000000000.0,
+   "min_x": -10000000000.0
+  }
+ },
+ "element_names": [
+  "cnao3s0$start",
+  "septum_aperture",
+  "se_010a_esp",
+  "se_011a_dri",
+  "se_012a_fls",
+  "se_013a_puh",
+  "se_014a_fls",
+  "se_015a_dri",
+  "drift_se_016a_csh..1",
+  "se_016a_csh",
+  "drift_se_016a_csh..2",
+  "se_017a_dri",
+  "se_018a_qus",
+  "se_019a_bs1",
+  "se_020a_dri",
+  "se_021a_fls",
+  "se_022a_dri",
+  "se_022b_sip",
+  "sf_001a_mbs",
+  "sf_001c_mig",
+  "sf_002a_dri",
+  "sf_003a_fls",
+  "sf_004a_dri",
+  "drift_sf_005a_csv..1",
+  "sf_005a_csv",
+  "drift_sf_005a_csv..2",
+  "sf_006a_dri",
+  "sf_007a_qus",
+  "sf_008a_bs1",
+  "sf_009a_dri",
+  "sf_010a_fls",
+  "sf_011a_puv",
+  "sf_012a_fls",
+  "sf_013a_dri",
+  "sf_013b_sip",
+  "s0_001a_mbs",
+  "s0_002a_dri",
+  "s0_003a_fls",
+  "s0_004a_dri",
+  "s0_005a_qus",
+  "s0_006a_bs1",
+  "s0_007a_dri",
+  "s0_008a_fls",
+  "s0_009a_puh",
+  "s0_010a_fls",
+  "s0_011a_dri",
+  "s0_012a_ssm",
+  "s0_013a_dri",
+  "s0_014a_dia",
+  "s0_015a_dri",
+  "s0_016a_msp",
+  "s0_017a_dri",
+  "s0_018a_dri",
+  "symp",
+  "s0_019a_dri",
+  "s0_020a_t45",
+  "s0_021a_fls",
+  "s0_022a_dri",
+  "s0_023a_esp",
+  "s0_024a_dri",
+  "s0_025a_fls",
+  "s0_026a_puh",
+  "s0_027a_fls",
+  "s0_028a_t60",
+  "drift_s0_029a_csh..1",
+  "s0_029a_csh",
+  "drift_s0_029a_csh..2",
+  "s0_030a_dri",
+  "s0_031a_qus",
+  "s0_032a_bs1",
+  "s0_033a_dri",
+  "s0_034a_fls",
+  "s0_035a_dri",
+  "s0_035b_sip",
+  "s1_001a_mbs",
+  "s1_001c_mig",
+  "s1_002a_dri",
+  "s1_003a_fls",
+  "s1_004a_dri",
+  "drift_s1_005a_csv..1",
+  "s1_005a_csv",
+  "drift_s1_005a_csv..2",
+  "s1_006a_dri",
+  "s1_007a_qus",
+  "s1_008a_bs1",
+  "s1_009a_dri",
+  "s1_010a_fls",
+  "s1_011a_puv",
+  "s1_012a_fls",
+  "s1_013a_dri",
+  "s1_013b_sip",
+  "s2_001a_mbs",
+  "s2_002a_dri",
+  "s2_003a_fls",
+  "s2_004a_dri",
+  "s2_005a_qus",
+  "s2_006a_bs1",
+  "s2_007a_dri",
+  "drift_s2_008a_csh..1",
+  "s2_008a_csh",
+  "drift_s2_008a_csh..2",
+  "s2_009a_dri",
+  "s2_010a_fls",
+  "s2_011a_puh",
+  "s2_012a_fls",
+  "s2_013a_sva",
+  "s2_014a_fls",
+  "s2_015a_fct",
+  "s2_016a_bs1",
+  "s2_017a_fls",
+  "s2_018a_dri",
+  "s2_019a_sxc",
+  "s2_020a_dri",
+  "s2_021a_qus",
+  "s2_022a_bs1",
+  "s2_023a_dri",
+  "s2_024a_fls",
+  "s2_025a_dri",
+  "s2_025b_sip",
+  "s3_001a_mbs",
+  "s3_001c_mig",
+  "s3_002a_dri",
+  "s3_003a_fls",
+  "s3_004a_dri",
+  "drift_s3_005a_csv..1",
+  "s3_005a_csv",
+  "drift_s3_005a_csv..2",
+  "s3_006a_bs1",
+  "s3_007a_dri",
+  "s3_008a_fls",
+  "s3_009a_dri",
+  "s3_010a_bds",
+  "s3_011a_dri",
+  "s3_012a_bdi",
+  "s3_013a_dri",
+  "s3_014a_fls",
+  "s3_015a_dri",
+  "s3_016a_qus",
+  "s3_017a_bs1",
+  "s3_018a_dri",
+  "s3_019a_fls",
+  "s3_020a_puv",
+  "s3_021a_fls",
+  "s3_022a_dri",
+  "s3_022b_sip",
+  "s4_001a_mbs",
+  "s4_002a_dri",
+  "s4_003a_fls",
+  "s4_004a_dri",
+  "s4_005a_qus",
+  "s4_006a_bs1",
+  "s4_007a_dri",
+  "drift_s4_008a_csh..1",
+  "s4_008a_csh",
+  "drift_s4_008a_csh..2",
+  "s4_009a_dri",
+  "s4_010a_fls",
+  "s4_011a_puh",
+  "s4_012a_fls",
+  "s4_013a_dri",
+  "s4_014a_bs1",
+  "s4_015a_bec",
+  "s4_016a_bs1",
+  "s4_017a_dri",
+  "s4_018a_fls",
+  "s4_019a_dri",
+  "s4_020a_qkh",
+  "s4_021a_dri",
+  "s4_022a_qkv",
+  "s4_023a_dri",
+  "s4_024a_qus",
+  "s4_025a_bs1",
+  "s4_026a_dri",
+  "s4_027a_fls",
+  "s4_028a_dri",
+  "s4_028b_sip",
+  "s5_001a_mbs",
+  "s5_001c_mig",
+  "s5_002a_dri",
+  "s5_003a_fls",
+  "s5_004a_dri",
+  "drift_s5_005a_csv..1",
+  "s5_005a_csv",
+  "drift_s5_005a_csv..2",
+  "s5_006a_dri",
+  "s5_007a_qus",
+  "s5_008a_bs1",
+  "s5_009a_dri",
+  "s5_010a_dpv",
+  "s5_011a_dri",
+  "s5_012a_sxc",
+  "s5_013a_dri",
+  "s5_014a_fls",
+  "s5_015a_puv",
+  "s5_016a_fls",
+  "s5_017a_dri",
+  "s5_017b_sip",
+  "s6_001a_mbs",
+  "s6_002a_dri",
+  "s6_003a_fls",
+  "s6_004a_dri",
+  "s6_005a_qus",
+  "s6_006a_bs1",
+  "s6_007a_dri",
+  "s6_008a_fls",
+  "s6_009a_puh",
+  "s6_010a_fls",
+  "s6_011a_dri",
+  "s6_012a_acq",
+  "s6_013a_dri",
+  "drift_s6_014a_csh..1",
+  "s6_014a_csh",
+  "drift_s6_014a_csh..2",
+  "s6_015a_dri",
+  "s6_016a_bs1",
+  "s6_017a_fls",
+  "s6_018a_shh",
+  "s6_019a_qus",
+  "s6_020a_she",
+  "s6_021a_fls",
+  "s6_022a_dri",
+  "s6_022b_sip",
+  "s7_001a_mbs",
+  "s7_001c_mig",
+  "s7_002a_dri",
+  "s7_003a_fls",
+  "s7_004a_dri",
+  "drift_s7_005a_csv..1",
+  "s7_005a_csv",
+  "drift_s7_005a_csv..2",
+  "s7_006a_dri",
+  "s7_007a_qus",
+  "s7_008a_bs1",
+  "s7_009a_dri",
+  "s7_010a_fls",
+  "s7_011a_puv",
+  "s7_012a_fls",
+  "s7_013a_dri",
+  "s7_013b_sip",
+  "s8_001a_mbs",
+  "s8_002a_dri",
+  "s8_003a_fls",
+  "s8_004a_dri",
+  "s8_005a_qus",
+  "s8_006a_bs1",
+  "s8_007a_dri",
+  "drift_s8_008a_csh..1",
+  "s8_008a_csh",
+  "drift_s8_008a_csh..2",
+  "s8_009a_dri",
+  "s8_010a_fls",
+  "s8_011a_puh",
+  "s8_012a_fls",
+  "s8_013a_sva",
+  "s8_014a_fls",
+  "s8_015a_dri",
+  "s8_016a_bde",
+  "s8_017a_dri",
+  "s8_018a_fls",
+  "s8_019a_bs1",
+  "s8_020a_cav",
+  "s8_020b_slc",
+  "s8_020c_g1c",
+  "s8_020d_g1c",
+  "s8_020e_g2c",
+  "s8_020f_g2c",
+  "s8_020h_anc",
+  "s8_020i_gfv",
+  "s8_020l_gff",
+  "s8_020m_gfi",
+  "s8_020n_gfp",
+  "s8_020o_gfr",
+  "s8_021a_bs1",
+  "s8_022a_fls",
+  "s8_023a_dri",
+  "s8_024a_skq",
+  "s8_025a_dri",
+  "s8_026a_sch",
+  "s8_027a_dri",
+  "s8_028a_sxr",
+  "s8_029a_spu",
+  "s8_030a_dri",
+  "s8_031a_fls",
+  "s8_032a_puh",
+  "s8_033a_fls",
+  "s8_034a_dri",
+  "drift_s8_035a_csh..1",
+  "s8_035a_csh",
+  "drift_s8_035a_csh..2",
+  "s8_036a_dri",
+  "s8_037a_qus",
+  "s8_038a_bs1",
+  "s8_039a_dri",
+  "s8_040a_fls",
+  "s8_041a_dri",
+  "s8_041b_sip",
+  "s9_001a_mbs",
+  "s9_001c_mig",
+  "s9_002a_dri",
+  "s9_003a_fls",
+  "s9_004a_dri",
+  "drift_s9_005a_csv..1",
+  "s9_005a_csv",
+  "drift_s9_005a_csv..2",
+  "s9_006a_dri",
+  "s9_007a_qus",
+  "s9_008a_bs1",
+  "s9_009a_dri",
+  "s9_010a_fls",
+  "s9_011a_puv",
+  "s9_012a_fls",
+  "s9_013a_dri",
+  "s9_013b_sip",
+  "sa_001a_mbs",
+  "sa_002a_dri",
+  "sa_003a_fls",
+  "sa_004a_dri",
+  "sa_005a_qus",
+  "sa_006a_bs1",
+  "sa_007a_dri",
+  "drift_sa_008a_csh..1",
+  "sa_008a_csh",
+  "drift_sa_008a_csh..2",
+  "sa_009a_dri",
+  "sa_010a_fls",
+  "sa_011a_puh",
+  "sa_012a_fls",
+  "sa_013a_dri",
+  "sa_014a_rgb",
+  "sa_015a_dri",
+  "sa_016a_fls",
+  "sa_017a_dri",
+  "sa_018a_sxc",
+  "sa_019a_dri",
+  "sa_020a_qus",
+  "sa_021a_bs1",
+  "sa_022a_dri",
+  "sa_023a_fls",
+  "sa_024a_dri",
+  "sa_024b_sip",
+  "sb_001a_mbs",
+  "sb_001c_mig",
+  "sb_002a_dri",
+  "sb_003a_fls",
+  "sb_004a_dri",
+  "sb_005a_scv",
+  "sb_006a_dri",
+  "drift_sb_007a_csv..1",
+  "sb_007a_csv",
+  "drift_sb_007a_csv..2",
+  "sb_008a_bs1",
+  "sb_009a_dri",
+  "sb_010a_fls",
+  "sb_011a_shv",
+  "sb_012a_qus",
+  "sb_013a_she",
+  "sb_014a_fls",
+  "sb_015a_puv",
+  "sb_016a_fls",
+  "sb_017a_dri",
+  "sb_017b_sip",
+  "sc_001a_mbs",
+  "sc_002a_dri",
+  "sc_003a_fls",
+  "sc_004a_dri",
+  "sc_005a_qus",
+  "sc_006a_bs1",
+  "sc_007a_dri",
+  "drift_sc_008a_csh..1",
+  "sc_008a_csh",
+  "drift_sc_008a_csh..2",
+  "sc_009a_dri",
+  "sc_010a_fls",
+  "sc_011a_puh",
+  "sc_012a_fls",
+  "sc_013a_dct",
+  "sc_014a_bs1",
+  "sc_015a_fls",
+  "sc_016a_puh",
+  "sc_017a_fls",
+  "sc_018a_sva",
+  "sc_019a_fls",
+  "sc_020a_dri",
+  "drift_sc_021a_csh..1",
+  "sc_021a_csh",
+  "drift_sc_021a_csh..2",
+  "sc_022a_dri",
+  "sc_023a_dph",
+  "sc_024a_dri",
+  "sc_025a_qus",
+  "sc_026a_bs1",
+  "sc_027a_dri",
+  "sc_028a_fls",
+  "sc_029a_dri",
+  "sc_029b_sip",
+  "sd_001a_mbs",
+  "sd_001c_mig",
+  "sd_002a_dri",
+  "sd_003a_fls",
+  "sd_004a_dri",
+  "drift_sd_005a_csv..1",
+  "sd_005a_csv",
+  "drift_sd_005a_csv..2",
+  "sd_006a_dri",
+  "sd_007a_qus",
+  "sd_008a_bs1",
+  "sd_009a_dri",
+  "sd_010a_fls",
+  "sd_011a_dri",
+  "sd_012a_bdi",
+  "sd_013a_dri",
+  "sd_014a_sxc",
+  "sd_015a_bs1",
+  "sd_016a_dri",
+  "sd_017a_fls",
+  "sd_018a_puv",
+  "sd_019a_fls",
+  "sd_020a_dri",
+  "sd_020b_sip",
+  "se_001a_mbs",
+  "se_002a_dri",
+  "se_003a_fls",
+  "se_004a_dri",
+  "se_005a_qus",
+  "se_006a_bs1",
+  "se_007a_dri",
+  "se_008a_fls",
+  "se_009a_dri",
+  "cnao3s0$end"
+ ],
+ "config": {
+  "XTRACK_MULTIPOLE_NO_SYNRAD": true,
+  "XFIELDS_BB3D_NO_BEAMSTR": true,
+  "XFIELDS_BB3D_NO_BHABHA": true,
+  "XTRACK_GLOBAL_XY_LIMIT": 1.0
+ },
+ "_extra_config": {
+  "skip_end_turn_actions": false,
+  "reset_s_at_end_turn": true,
+  "matrix_responsiveness_tol": 1e-15,
+  "matrix_stability_tol": 0.002,
+  "dt_update_time_dependent_vars": 0.0,
+  "_t_last_update_time_dependent_vars": null,
+  "_radiation_model": null,
+  "_beamstrahlung_model": null,
+  "_bhabha_model": null,
+  "_needs_rng": false,
+  "enable_time_dependent_vars": false,
+  "twiss_default": {},
+  "steering_monitors_x": null,
+  "steering_monitors_y": null,
+  "steering_correctors_x": null,
+  "steering_correctors_y": null
+ },
+ "particle_ref": {
+  "q0": 1.0,
+  "ax": [
+   0.0
+  ],
+  "ay": [
+   0.0
+  ],
+  "at_element": [
+   0
+  ],
+  "chi": [
+   1.0
+  ],
+  "mass0": 938272089.4282573,
+  "pdg_id": [
+   0
+  ],
+  "_rng_s3": [
+   0
+  ],
+  "parent_particle_id": [
+   0
+  ],
+  "state": [
+   1
+  ],
+  "py": [
+   0.0
+  ],
+  "s": [
+   0.0
+  ],
+  "_rng_s4": [
+   0
+  ],
+  "x": [
+   0.0
+  ],
+  "charge_ratio": [
+   1.0
+  ],
+  "t_sim": 7.585245115665504e-07,
+  "particle_id": [
+   0
+  ],
+  "at_turn": [
+   0
+  ],
+  "zeta": [
+   0.0
+  ],
+  "y": [
+   0.0
+  ],
+  "_rng_s2": [
+   0
+  ],
+  "_rng_s1": [
+   0
+  ],
+  "start_tracking_at_element": -1,
+  "weight": [
+   1.0
+  ],
+  "px": [
+   0.0
+  ],
+  "delta": [
+   0.0
+  ],
+  "ptau": [
+   0.0
+  ],
+  "rvv": [
+   1.0
+  ],
+  "rpp": [
+   1.0
+  ],
+  "p0c": [
+   340870431.00185585
+  ],
+  "beta0": [
+   0.34146044411307075
+  ],
+  "gamma0": [
+   1.06394733540093
+  ]
+ },
+ "_var_management_data": {
+  "var_values": {
+   "t_turn_s": 0.0,
+   "__vary_default": {},
+   "version": 50902.0,
+   "pi": 3.141592653589793,
+   "twopi": 6.283185307179586,
+   "degrad": 57.29577951308232,
+   "raddeg": 0.017453292519943295,
+   "e": 2.718281828459045,
+   "amu0": 1.2566370614359173e-06,
+   "emass": 0.00051099895,
+   "mumass": 0.1056583755,
+   "nmass": 0.93956542052,
+   "umass": 0.93149410242,
+   "pmass": 0.93827208816,
+   "clight": 299792458.0,
+   "qelect": 1.602176634e-19,
+   "hbar": 6.582119569e-25,
+   "erad": 2.8179403262e-15,
+   "prad": 1.5346982671888944e-18,
+   "twiss_tol": 1e-06,
+   "fintval": 0.0,
+   "kf": 0.26210028586166323,
+   "kr": 0.47080588014796365,
+   "kd": 0.38711583850702824,
+   "kacq": 0.0,
+   "kskq": 0.0,
+   "s0": -0.044962140055820596,
+   "s1": -0.2323602334990238,
+   "sr": -3.3015954716218534,
+   "dk2": 0.0,
+   "dk2b": 0.0,
+   "k_s2_019a_sxc": -0.044962140055820596,
+   "k_s5_012a_sxc": -0.2323602334990238,
+   "k_s8_028a_sxr": -3.3015954716218534,
+   "k_sa_018a_sxc": -0.044962140055820596,
+   "k_sd_014a_sxc": -0.2323602334990238,
+   "kick_se_016a_csh": 0.0,
+   "kick_sf_005a_csv": 0.0,
+   "kick_s0_029a_csh": 0.0,
+   "kick_s1_005a_csv": 0.0,
+   "kick_s2_008a_csh": 0.0,
+   "kick_s3_005a_csv": 0.0,
+   "kick_s4_008a_csh": 0.0,
+   "kick_s5_005a_csv": 0.0,
+   "kick_s6_014a_csh": 0.0,
+   "kick_s7_005a_csv": 0.0,
+   "kick_s8_008a_csh": 0.0,
+   "kick_s8_035a_csh": 0.0,
+   "kick_s9_005a_csv": 0.0,
+   "kick_sa_008a_csh": 0.0,
+   "kick_sb_007a_csv": 0.0,
+   "kick_sc_008a_csh": 0.0,
+   "kick_sc_021a_csh": 0.0,
+   "kick_sd_005a_csv": 0.0
+  },
+  "functions": {
+   "_funcs": {}
+  }
+ },
+ "_var_manager": [
+  [
+   "vars['k_s2_019a_sxc']",
+   "(vars['s0'] + vars['dk2b'])"
+  ],
+  [
+   "vars['k_s5_012a_sxc']",
+   "(vars['s1'] + vars['dk2'])"
+  ],
+  [
+   "vars['k_s8_028a_sxr']",
+   "vars['sr']"
+  ],
+  [
+   "vars['k_sa_018a_sxc']",
+   "(vars['s0'] - vars['dk2b'])"
+  ],
+  [
+   "vars['k_sd_014a_sxc']",
+   "(vars['s1'] - vars['dk2'])"
+  ],
+  [
+   "element_refs['se_016a_csh'].knl[0]",
+   "(-vars['kick_se_016a_csh'])"
+  ],
+  [
+   "element_refs['se_018a_qus'].k1",
+   "(1.0 * vars['kf'])"
+  ],
+  [
+   "element_refs['sf_001a_mbs'].edge_entry_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['sf_001a_mbs'].edge_exit_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['sf_005a_csv'].ksl[0]",
+   "(1.0 * vars['kick_sf_005a_csv'])"
+  ],
+  [
+   "element_refs['sf_007a_qus'].k1",
+   "(1.0 * (-vars['kd']))"
+  ],
+  [
+   "element_refs['s0_001a_mbs'].edge_entry_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['s0_001a_mbs'].edge_exit_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['s0_005a_qus'].k1",
+   "(1.0 * vars['kf'])"
+  ],
+  [
+   "element_refs['s0_029a_csh'].knl[0]",
+   "(-vars['kick_s0_029a_csh'])"
+  ],
+  [
+   "element_refs['s0_031a_qus'].k1",
+   "(1.0 * vars['kf'])"
+  ],
+  [
+   "element_refs['s1_001a_mbs'].edge_entry_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['s1_001a_mbs'].edge_exit_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['s1_005a_csv'].ksl[0]",
+   "(1.0 * vars['kick_s1_005a_csv'])"
+  ],
+  [
+   "element_refs['s1_007a_qus'].k1",
+   "(1.0 * (-vars['kd']))"
+  ],
+  [
+   "element_refs['s2_001a_mbs'].edge_entry_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['s2_001a_mbs'].edge_exit_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['s2_005a_qus'].k1",
+   "(1.0 * vars['kf'])"
+  ],
+  [
+   "element_refs['s2_008a_csh'].knl[0]",
+   "(-vars['kick_s2_008a_csh'])"
+  ],
+  [
+   "element_refs['s2_019a_sxc'].k2",
+   "vars['s0']"
+  ],
+  [
+   "element_refs['s2_021a_qus'].k1",
+   "(1.0 * vars['kr'])"
+  ],
+  [
+   "element_refs['s3_001a_mbs'].edge_entry_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['s3_001a_mbs'].edge_exit_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['s3_005a_csv'].ksl[0]",
+   "(1.0 * vars['kick_s3_005a_csv'])"
+  ],
+  [
+   "element_refs['s3_016a_qus'].k1",
+   "(1.0 * (-vars['kd']))"
+  ],
+  [
+   "element_refs['s4_001a_mbs'].edge_entry_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['s4_001a_mbs'].edge_exit_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['s4_005a_qus'].k1",
+   "(1.0 * vars['kr'])"
+  ],
+  [
+   "element_refs['s4_008a_csh'].knl[0]",
+   "(-vars['kick_s4_008a_csh'])"
+  ],
+  [
+   "element_refs['s4_024a_qus'].k1",
+   "(1.0 * vars['kr'])"
+  ],
+  [
+   "element_refs['s5_001a_mbs'].edge_entry_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['s5_001a_mbs'].edge_exit_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['s5_005a_csv'].ksl[0]",
+   "(1.0 * vars['kick_s5_005a_csv'])"
+  ],
+  [
+   "element_refs['s5_007a_qus'].k1",
+   "(1.0 * (-vars['kd']))"
+  ],
+  [
+   "element_refs['s5_012a_sxc'].k2",
+   "vars['s1']"
+  ],
+  [
+   "element_refs['s6_001a_mbs'].edge_entry_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['s6_001a_mbs'].edge_exit_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['s6_005a_qus'].k1",
+   "(1.0 * vars['kr'])"
+  ],
+  [
+   "element_refs['s6_012a_acq'].k1",
+   "(1.0 * vars['kacq'])"
+  ],
+  [
+   "element_refs['s6_014a_csh'].knl[0]",
+   "(-vars['kick_s6_014a_csh'])"
+  ],
+  [
+   "element_refs['s6_019a_qus'].k1",
+   "(1.0 * vars['kf'])"
+  ],
+  [
+   "element_refs['s7_001a_mbs'].edge_entry_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['s7_001a_mbs'].edge_exit_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['s7_005a_csv'].ksl[0]",
+   "(1.0 * vars['kick_s7_005a_csv'])"
+  ],
+  [
+   "element_refs['s7_007a_qus'].k1",
+   "(1.0 * (-vars['kd']))"
+  ],
+  [
+   "element_refs['s8_001a_mbs'].edge_entry_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['s8_001a_mbs'].edge_exit_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['s8_005a_qus'].k1",
+   "(1.0 * vars['kf'])"
+  ],
+  [
+   "element_refs['s8_008a_csh'].knl[0]",
+   "(-vars['kick_s8_008a_csh'])"
+  ],
+  [
+   "element_refs['s8_024a_skq'].k1",
+   "(1.0 * vars['kskq'])"
+  ],
+  [
+   "element_refs['s8_028a_sxr'].k2",
+   "vars['sr']"
+  ],
+  [
+   "element_refs['s8_035a_csh'].knl[0]",
+   "(-vars['kick_s8_035a_csh'])"
+  ],
+  [
+   "element_refs['s8_037a_qus'].k1",
+   "(1.0 * vars['kf'])"
+  ],
+  [
+   "element_refs['s9_001a_mbs'].edge_entry_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['s9_001a_mbs'].edge_exit_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['s9_005a_csv'].ksl[0]",
+   "(1.0 * vars['kick_s9_005a_csv'])"
+  ],
+  [
+   "element_refs['s9_007a_qus'].k1",
+   "(1.0 * (-vars['kd']))"
+  ],
+  [
+   "element_refs['sa_001a_mbs'].edge_entry_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['sa_001a_mbs'].edge_exit_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['sa_005a_qus'].k1",
+   "(1.0 * vars['kf'])"
+  ],
+  [
+   "element_refs['sa_008a_csh'].knl[0]",
+   "(-vars['kick_sa_008a_csh'])"
+  ],
+  [
+   "element_refs['sa_018a_sxc'].k2",
+   "vars['s0']"
+  ],
+  [
+   "element_refs['sa_020a_qus'].k1",
+   "(1.0 * vars['kr'])"
+  ],
+  [
+   "element_refs['sb_001a_mbs'].edge_entry_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['sb_001a_mbs'].edge_exit_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['sb_007a_csv'].ksl[0]",
+   "(1.0 * vars['kick_sb_007a_csv'])"
+  ],
+  [
+   "element_refs['sb_012a_qus'].k1",
+   "(1.0 * (-vars['kd']))"
+  ],
+  [
+   "element_refs['sc_001a_mbs'].edge_entry_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['sc_001a_mbs'].edge_exit_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['sc_005a_qus'].k1",
+   "(1.0 * vars['kr'])"
+  ],
+  [
+   "element_refs['sc_008a_csh'].knl[0]",
+   "(-vars['kick_sc_008a_csh'])"
+  ],
+  [
+   "element_refs['sc_021a_csh'].knl[0]",
+   "(-vars['kick_sc_021a_csh'])"
+  ],
+  [
+   "element_refs['sc_025a_qus'].k1",
+   "(1.0 * vars['kr'])"
+  ],
+  [
+   "element_refs['sd_001a_mbs'].edge_entry_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['sd_001a_mbs'].edge_exit_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['sd_005a_csv'].ksl[0]",
+   "(1.0 * vars['kick_sd_005a_csv'])"
+  ],
+  [
+   "element_refs['sd_007a_qus'].k1",
+   "(1.0 * (-vars['kd']))"
+  ],
+  [
+   "element_refs['sd_014a_sxc'].k2",
+   "vars['s1']"
+  ],
+  [
+   "element_refs['se_001a_mbs'].edge_entry_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['se_001a_mbs'].edge_exit_fint",
+   "vars['fintval']"
+  ],
+  [
+   "element_refs['se_005a_qus'].k1",
+   "(1.0 * vars['kr'])"
+  ]
+ ],
+ "metadata": {}
+}
